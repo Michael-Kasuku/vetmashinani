@@ -1,0 +1,2663 @@
+/* Fonts */
+:root {
+    --default-font: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    --heading-font: "Montserrat", sans-serif;
+    --nav-font: "Poppins", sans-serif;
+    /* Global Colors - Veterinary Medicine Theme */
+    --background-color: #eaf7ef; /* Light green background for a soft, calming effect */
+    --default-color: #4a4a4a; /* Dark grey for text, ensuring readability */
+    --heading-color: #2e2e2e; /* Darker grey for headings */
+    --accent-color: #4cae4c; /* Green for buttons, links, and key highlights */
+    --surface-color: #ffffff; /* White for boxed elements to ensure contrast */
+    --contrast-color: #ffffff; /* White text color for contrast against dark or accent backgrounds */
+    /* Nav Menu Colors */
+    --nav-color: #4a4a4a; /* Dark grey for navmenu links */
+    --nav-hover-color: #FFBF00; /* Amber for nav hover for a vibrant feel */
+    --nav-mobile-background-color: #ffffff; /* White for mobile navigation */
+    --nav-dropdown-background-color: #ffffff; /* White background for dropdowns */
+    --nav-dropdown-color: #4a4a4a; /* Dark grey for dropdown links */
+    --nav-dropdown-hover-color: #FFBF00; /* Amber for dropdown hover links */
+    /* Smooth scroll */
+    scroll-behavior: smooth;
+}
+
+/* Color Presets - Custom Background Classes */
+.light-background {
+    --background-color: #ffffff; /* White for light backgrounds */
+    --surface-color: #eaf7ef; /* Light green for surface elements */
+}
+
+.dark-background {
+    --background-color: #2e2e2e; /* Dark grey for dark backgrounds */
+    --default-color: #eaf7ef; /* Light green for text in dark mode */
+    --heading-color: #ffffff; /* White for headings in dark mode */
+    --surface-color: #4a4a4a; /* Dark grey for surface elements in dark mode */
+    --contrast-color: #ffffff; /* White for contrast against dark backgrounds */
+}
+
+/*--------------------------------------------------------------
+# General Styling & Shared Classes
+--------------------------------------------------------------*/
+body {
+    color: var(--default-color);
+    background-color: var(--background-color);
+    font-family: var(--default-font);
+    line-height: 1.6;
+}
+
+a {
+    color: var(--accent-color); /* Blue for links */
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+    a:hover {
+        color: #FFBF00;
+    }
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--heading-color);
+    font-family: var(--heading-font);
+}
+
+/*--------------------------------------------------------------
+# Global Header
+--------------------------------------------------------------*/
+.header {
+    color: var(--default-color); /* Dark grey for the header text */
+    background-color: var(--background-color); /* Light grey for the header background */
+    padding: 15px 20px; /* Adjusted padding for better spacing */
+    transition: all 0.3s ease-in-out;
+    z-index: 997;
+    border-bottom: 1px solid #ddd; /* Subtle border for separation */
+    display: flex; /* Flexbox for layout */
+    justify-content: space-between; /* Space between logo and menu */
+    align-items: center; /* Center vertically */
+}
+
+    .header .logo {
+        line-height: 1;
+        display: flex; /* Align logo elements */
+        align-items: center; /* Center vertically */
+    }
+
+        .header .logo img {
+            max-height: 40px; /* Slightly larger for better visibility */
+            margin-right: 8px;
+        }
+
+        .header .logo h1 {
+            font-size: 22px;
+            margin: 0;
+            font-weight: 600;
+            color: var(--heading-color); /* Dark grey for the logo text */
+        }
+
+        .header .logo span {
+            color: var(--accent-color); /* Blue accent for logo's highlighted part */
+            font-size: 22px;
+            font-weight: 600;
+            padding-left: 3px;
+        }
+
+    .header .btn-getstarted,
+    .header .btn-getstarted:focus {
+        color: var(--contrast-color); /* White text for button */
+        background-color: var(--accent-color); /* Blue button background */
+        font-size: 14px;
+        padding: 10px 30px;
+        margin-left: 15px; /* Margin for spacing */
+        border-radius: 4px;
+        transition: background-color 0.3s ease-in-out;
+    }
+
+        .header .btn-getstarted:hover,
+        .header .btn-getstarted:focus:hover {
+            background: color-mix(in srgb, var(--accent-color), transparent 15%); /* Lighter blue on hover */
+        }
+
+.navmenu {
+    display: flex; /* Use flex for layout */
+    align-items: center; /* Center vertically */
+}
+
+    .navmenu a {
+        color: var(--nav-color);
+        font-family: var(--nav-font);
+        font-weight: 500;
+        font-size: 16px;
+        padding: 0 20px; /* Adjusted padding for better spacing */
+        transition: color 0.3s ease-in-out;
+    }
+
+        .navmenu a:hover {
+            color: #FFBF00; /* Hover color for navigation */
+        }
+
+    /* Dropdown Styling */
+    .navmenu .dropdown-menu {
+        background-color: var(--nav-dropdown-background-color);
+        border: none;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+        .navmenu .dropdown-menu a {
+            color: var(--nav-dropdown-color);
+            padding: 10px 20px;
+        }
+
+            .navmenu .dropdown-menu a:hover {
+                background-color: var(--nav-hover-color); /* Blue background on hover */
+                color: var(--contrast-color); /* White text on hover */
+            }
+
+/* Sticky Header Shadow */
+.scrolled .header {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for scrolled state */
+}
+
+/*--------------------------------------------------------------
+# Index Page Header
+--------------------------------------------------------------*/
+.index-page .header {
+    --background-color: rgba(255, 255, 255, 0); /* Transparent background for a clean look */
+    --heading-color: #ffffff; /* White text for better contrast against the background */
+    --nav-color: #000000; /* Amber navigation links */
+    --nav-hover-color: blue; /* Full white on hover for navigation links */
+}
+
+/* Header Style on Scroll for the Index Page */
+.index-page.scrolled .header {
+    --background-color: #ffffff; /* Solid white background on scroll */
+    --heading-color: #000000; /* Switch to black for better readability */
+    --nav-color: #000000; /* Black navigation links after scrolling */
+    --nav-hover-color: blue; /* Blue hover effect for better visibility */
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu - Desktop & Mobile
+--------------------------------------------------------------*/
+/* Desktop Navigation Menu */
+@media (min-width: 1200px) {
+    .navmenu {
+        padding: 0; /* Remove padding for nav */
+        margin-left: auto; /* Align to the right */
+        margin-right: auto; /* Center the nav menu */
+        max-width: 1200px; /* Set max width for the menu */
+    }
+
+        .navmenu ul {
+            margin: 0;
+            padding: 0;
+            display: flex; /* Use flexbox for better alignment */
+            justify-content: space-around; /* Evenly distribute space between items */
+            list-style: none;
+            align-items: center; /* Align items centrally */
+        }
+
+        .navmenu li {
+            position: relative; /* Needed for dropdown positioning */
+        }
+
+        /* Navigation Link Styles */
+        .navmenu a,
+        .navmenu a:focus {
+            color: var(--nav-color); /* Default navigation link color */
+            padding: 18px 15px; /* Padding for better clickable area */
+            font-size: 16px;
+            font-family: var(--nav-font); /* Use custom font for nav items */
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Center text and icons */
+            white-space: nowrap; /* Prevent text wrapping */
+            transition: 0.3s; /* Smooth transition effect */
+        }
+
+            .navmenu a i,
+            .navmenu a:focus i {
+                font-size: 12px; /* Icon size */
+                margin-left: 5px;
+                transition: 0.3s; /* Smooth icon transition */
+            }
+
+        /* Last navigation item without padding on the right */
+        .navmenu li:last-child a {
+            padding-right: 0;
+        }
+
+        /* Hover and Active States for Navigation Links */
+        .navmenu li:hover > a,
+        .navmenu .active,
+        .navmenu .active:focus {
+            color: var(--nav-hover-color); /* Hover color */
+        }
+
+        /* Dropdown Menu Styles */
+        .navmenu .dropdown ul {
+            margin: 0;
+            padding: 10px 0;
+            background: var(--nav-dropdown-background-color); /* Background for dropdown */
+            position: absolute;
+            visibility: hidden;
+            left: 0; /* Align dropdown under parent */
+            top: 100%; /* Align dropdown below parent */
+            opacity: 0;
+            transition: 0.3s; /* Smooth dropdown transition */
+            border-radius: 4px;
+            z-index: 99;
+            box-shadow: 0px 0px 30px white; /* Soft shadow for dropdowns */
+        }
+
+            /* Ensure minimum width for dropdown items */
+            .navmenu .dropdown ul li {
+                min-width: 200px;
+            }
+
+            /* Dropdown Link Styles */
+            .navmenu .dropdown ul a {
+                padding: 10px 20px;
+                font-size: 15px;
+                color: var(--nav-dropdown-color); /* Default dropdown color */
+                font-weight: 400;
+                display: block;
+                transition: 0.3s; /* Smooth transition for dropdown links */
+            }
+
+                /* Hover State for Dropdown Links */
+                .navmenu .dropdown ul a:hover {
+                    color: var(--nav-dropdown-hover-color); /* Hover color for dropdown links */
+                }
+
+        /* Display dropdown on hover */
+        .navmenu li:hover > ul {
+            visibility: visible;
+            opacity: 1; /* Make visible */
+        }
+}
+
+/* Mobile Navigation Menu */
+@media (max-width: 1200px) {
+    .navmenu {
+        position: fixed; /* Fixed position for mobile menu */
+        top: 0;
+        right: 0;
+        width: 250px;
+        height: 100%; /* Full height */
+        background: var(--nav-mobile-background-color); /* White background for mobile */
+        padding-top: 20px; /* Spacing at the top */
+        z-index: 1000;
+        transform: translateX(100%); /* Hidden by default */
+        transition: transform 0.3s ease; /* Smooth slide-in effect */
+    }
+
+        .navmenu.open {
+            transform: translateX(0); /* Show menu */
+        }
+
+        /* Mobile Navigation Link Styles */
+        .navmenu ul {
+            display: block;
+            padding: 0;
+            margin: 0;
+        }
+
+        .navmenu li {
+            border-bottom: 1px solid #ddd; /* Divider between menu items */
+        }
+
+        .navmenu a {
+            color: var(--nav-dropdown-color); /* Default color for mobile nav links */
+            padding: 15px; /* Spacing for mobile */
+            font-size: 18px; /* Larger font size */
+            text-align: center; /* Center text for mobile */
+        }
+
+            /* Hover State for Mobile Links */
+            .navmenu a:hover {
+                background-color: var(--nav-hover-color); /* Hover effect for mobile */
+                color: var(--contrast-color); /* White text on hover */
+            }
+}
+
+
+.footer {
+    background: linear-gradient(135deg, #6c757d 0%, #343a40 100%);
+    color: #fff;
+    padding: 40px 0;
+}
+
+    .footer h4 {
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #FFD700; /* Gold color for headings */
+    }
+
+    .footer p {
+        margin-bottom: 10px;
+    }
+
+    .footer .social-links {
+        justify-content: space-between;
+    }
+
+    .footer .social-icon {
+        margin-right: 15px;
+        font-size: 24px;
+        transition: transform 0.3s;
+    }
+
+        .footer .social-icon:hover {
+            transform: scale(1.2);
+        }
+
+    .footer a {
+        color: #ffffff; /* White color for links */
+        transition: color 0.3s;
+    }
+
+        .footer a:hover {
+            color: #FFD700; /* Change color on hover */
+        }
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+    .footer-links ul li {
+        margin-bottom: 10px;
+    }
+
+        .footer-links ul li a {
+            text-decoration: none;
+        }
+
+            .footer-links ul li a:hover {
+                text-decoration: underline;
+            }
+
+.copyright {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #eaeaea; /* Light grey for copyright */
+}
+
+
+/*--------------------------------------------------------------
+# Preloader
+--------------------------------------------------------------*/
+#preloader {
+    position: fixed; /* Fixes the preloader to the viewport */
+    inset: 0; /* Sets all sides (top, right, bottom, left) to 0 for full coverage */
+    z-index: 999999; /* Ensures the preloader is on top of all other elements */
+    overflow: hidden; /* Hides any overflow content */
+    background: var(--background-color); /* Sets the background color using a variable */
+    transition: all 0.6s ease-out; /* Smooth transition for all properties over 0.6 seconds */
+}
+
+    #preloader:before {
+        content: ""; /* Creates an empty content for the pseudo-element */
+        position: fixed; /* Fixes the pseudo-element to the viewport */
+        top: calc(50% - 30px); /* Centers the spinner vertically */
+        left: calc(50% - 30px); /* Centers the spinner horizontally */
+        border: 6px solid #ffffff; /* Sets a white border for the spinner */
+        border-color: var(--accent-color) transparent var(--accent-color) transparent; /* Creates a colorful border effect */
+        border-radius: 50%; /* Makes the spinner circular */
+        width: 60px; /* Sets the width of the spinner */
+        height: 60px; /* Sets the height of the spinner */
+        animation: animate-preloader 1.5s linear infinite; /* Applies an infinite rotating animation */
+    }
+
+@keyframes animate-preloader {
+    0% {
+        transform: rotate(0deg); /* Starts the rotation from 0 degrees */
+    }
+
+    100% {
+        transform: rotate(360deg); /* Ends the rotation at 360 degrees */
+    }
+}
+
+/*--------------------------------------------------------------
+# Scroll Top Button
+--------------------------------------------------------------*/
+.scroll-top {
+    position: fixed; /* Fixes the button to the viewport */
+    visibility: hidden; /* Hides the button by default */
+    opacity: 0; /* Sets initial opacity to 0 for fading effect */
+    right: 15px; /* Positions the button 15px from the right */
+    bottom: 15px; /* Positions the button 15px from the bottom */
+    z-index: 99999; /* Ensures the button is on top of other elements */
+    background-color: var(--accent-color); /* Sets the background color using a variable */
+    width: 40px; /* Sets the width of the button */
+    height: 40px; /* Sets the height of the button */
+    border-radius: 4px; /* Rounds the corners of the button */
+    transition: all 0.4s; /* Smooth transition for all properties over 0.4 seconds */
+}
+
+    .scroll-top i {
+        font-size: 24px; /* Sets the font size for the icon */
+        color: var(--contrast-color); /* Sets the icon color using a variable */
+        line-height: 0; /* Aligns the icon properly within the button */
+    }
+
+    .scroll-top:hover {
+        background-color: color-mix(in srgb, var(--accent-color), transparent 20%); /* Changes background color on hover */
+        color: var(--contrast-color); /* Keeps the icon color on hover */
+    }
+
+    .scroll-top.active {
+        visibility: visible; /* Shows the button when active */
+        opacity: 1; /* Sets opacity to 1 for fading effect */
+    }
+
+/*--------------------------------------------------------------
+# Disable AOS Animation Delay on Mobile Devices
+--------------------------------------------------------------*/
+@media screen and (max-width: 768px) {
+    [data-aos-delay] {
+        transition-delay: 0 !important; /* Removes animation delay for mobile devices */
+    }
+}
+
+/*--------------------------------------------------------------
+# Global Page Titles & Breadcrumbs
+--------------------------------------------------------------*/
+.page-title {
+    color: var(--default-color); /* Sets the text color for the page title */
+    background-color: var(--background-color); /* Sets the background color for the page title */
+    position: relative; /* Allows positioning of child elements relative to this element */
+}
+
+    .page-title .heading {
+        padding: 80px 0; /* Adds vertical padding to the heading */
+        border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%); /* Adds a top border with mixed color */
+    }
+
+        .page-title .heading h1 {
+            font-size: 38px; /* Sets the font size for the main heading */
+            font-weight: 700; /* Makes the main heading bold */
+        }
+
+    .page-title nav {
+        background-color: color-mix(in srgb, var(--default-color), transparent 95%); /* Sets the background color for the navigation area */
+        padding: 20px 0; /* Adds vertical padding to the navigation area */
+    }
+
+        .page-title nav ol {
+            display: flex; /* Uses flexbox for layout */
+            flex-wrap: wrap; /* Allows items to wrap onto the next line */
+            list-style: none; /* Removes default list styling */
+            margin: 0; /* Removes default margin */
+            font-size: 16px; /* Sets the font size for breadcrumb items */
+            font-weight: 600; /* Makes breadcrumb items semi-bold */
+        }
+
+            .page-title nav ol li + li {
+                padding-left: 10px; /* Adds space to the left of each breadcrumb item, except the first */
+            }
+
+                .page-title nav ol li + li::before {
+                    content: "/"; /* Adds a separator before each breadcrumb item */
+                    display: inline-block; /* Makes the separator an inline block */
+                    padding-right: 10px; /* Adds space to the right of the separator */
+                    color: color-mix(in srgb, var(--default-color), transparent 70%); /* Sets the color of the separator */
+                }
+
+/*--------------------------------------------------------------
+# Global Sections
+--------------------------------------------------------------*/
+section,
+.section {
+    color: var(--default-color); /* Sets the text color for the sections */
+    background-color: var(--background-color); /* Sets the background color for the sections */
+    padding: 60px 0; /* Adds vertical padding (60px) to the top and bottom of each section */
+    scroll-margin-top: 98px; /* Adds a top margin for smooth scrolling when links to sections are clicked */
+    overflow: clip; /* Clips the content that overflows the element's box */
+    width: 100%; /* Ensure full width */
+    margin: 0; /* Remove default margins */
+    box-sizing: border-box; /* Ensure padding and border are included in the total width */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 1199px) {
+    section,
+    .section {
+        scroll-margin-top: 64px; /* Reduces the scroll margin for smaller screens */
+    }
+}
+
+/*--------------------------------------------------------------
+# Global Section Titles
+--------------------------------------------------------------*/
+.section-title {
+    text-align: center; /* Centers the title text */
+    padding-bottom: 60px; /* Adds padding below the title */
+    position: relative; /* Positions the title relative to its normal position */
+}
+
+    .section-title h2 {
+        font-size: 32px; /* Sets the font size for the section title */
+        font-weight: 700; /* Makes the section title bold */
+        position: relative; /* Positions the title relative to its normal position for child elements */
+    }
+
+        .section-title h2:before,
+        .section-title h2:after {
+            content: ""; /* Creates an empty content for pseudo-elements */
+            width: 50px; /* Sets the width of the line */
+            height: 2px; /* Sets the height of the line */
+            background: var(--accent-color); /* Sets the background color of the line */
+            display: inline-block; /* Makes the lines inline blocks to sit beside the title */
+        }
+
+        .section-title h2:before {
+            margin: 0 15px 10px 0; /* Adds margin to the right and bottom of the left line */
+        }
+
+        .section-title h2:after {
+            margin: 0 0 10px 15px; /* Adds margin to the bottom and left of the right line */
+        }
+
+    .section-title p {
+        margin-bottom: 0; /* Removes bottom margin from paragraphs within section titles */
+    }
+
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+.hero {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    padding: 80px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .hero img {
+        position: absolute;
+        inset: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+    }
+
+    .hero:before {
+        content: ""; /* Keeps the pseudo-element but removes background color */
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+    }
+
+    .hero .container {
+        position: relative;
+        z-index: 3;
+    }
+
+    .hero h2 {
+        margin: 0;
+        font-size: 44px;
+        font-weight: 700;
+    }
+
+    .hero p {
+        color: color-mix(in srgb, var(--default-color), transparent 20%);
+        margin: 5px 0 0 0;
+        font-size: 20px;
+    }
+
+
+/*--------------------------------------------------------------
+# About Section
+--------------------------------------------------------------*/
+.about .content h3 {
+    font-size: 24px; /* Sets a slightly smaller font size than the hero for the section titles */
+    font-weight: 700; /* Bold text for the section titles */
+    line-height: 1.5; /* Improves readability by increasing line spacing */
+    padding: 10px 20px; /* Adds padding inside the section title box */
+    background: white; /* White background for the section title box */
+    color: var(--accent-color); /* Accent color for the text */
+    border-radius: 7px; /* Rounds the corners of the section title box */
+    display: inline-block; /* Ensures the title box does not stretch to full width */
+    margin-bottom: 20px; /* Adds spacing below the section title */
+}
+
+.about .content p {
+    font-size: 1.125rem; /* A slightly smaller font size for body text */
+    line-height: 1.6; /* Improves readability by increasing line spacing */
+}
+
+.about .icon-box {
+    background-color: var(--surface-color); /* Sets the background color for the icon box */
+    padding: 40px; /* Adds ample padding inside the icon box */
+    box-shadow: 0px 10px 30px white; /* Creates a subtle shadow around the box */
+    border-radius: 10px; /* Rounds the corners of the icon box */
+    transition: all 0.3s ease; /* Adds smooth transitions for hover effects */
+}
+
+    .about .icon-box i {
+        width: 80px; /* Sets the width of the icon */
+        height: 80px; /* Sets the height of the icon */
+        border-radius: 50%; /* Makes the icon box a circle */
+        display: inline-flex; /* Uses Flexbox for centering */
+        align-items: center; /* Vertically centers the icon */
+        justify-content: center; /* Horizontally centers the icon */
+        margin-bottom: 20px; /* Adds space below the icon */
+        font-size: 36px; /* Makes the icon larger */
+        line-height: 0; /* Resets line height */
+        transition: all 0.4s ease; /* Smooth transition for hover effect */
+        background-color: white; /* White background for the icon */
+        color: var(--accent-color); /* Accent color for the icon */
+    }
+
+    .about .icon-box:hover i {
+        background-color: var(--accent-color); /* Changes the icon background color on hover */
+        color: var(--contrast-color); /* Changes the icon color on hover */
+    }
+
+/* Adjustments for layout on smaller screens */
+@media (max-width: 768px) {
+    .about .icon-box {
+        padding: 30px; /* Reduces padding for smaller screen sizes */
+    }
+}
+/*--------------------------------------------------------------
+# Services Section
+--------------------------------------------------------------*/
+.services {
+    padding: 5rem 0; /* Overall padding for the section */
+}
+
+    .services .service-item {
+        position: relative; /* Sets the positioning context for absolute elements inside */
+        padding-top: 40px; /* Adds space above each service item */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+        border-radius: 0.5rem; /* Rounded corners for a modern look */
+        transition: transform 0.3s; /* Smooth scale transition */
+    }
+
+        .services .service-item:hover {
+            transform: translateY(-5px); /* Slight lift effect on hover */
+        }
+
+        .services .service-item .title {
+            font-weight: 700; /* Bold text for service titles */
+            margin-bottom: 15px; /* Adds space below the title */
+            font-size: 1.125rem; /* Sets a slightly larger font size for the title */
+        }
+
+        .services .service-item .description {
+            line-height: 1.5; /* Improved line height for readability */
+            font-size: 0.875rem; /* Slightly larger font size for descriptions */
+            color: #6c757d; /* Muted text color for descriptions */
+            text-align: left; /* Left-align the description text */
+        }
+
+
+/*--------------------------------------------------------------
+# Faq Section
+--------------------------------------------------------------*/
+.faq .content h3 {
+    font-weight: 500; /* Medium weight for headings */
+    font-size: 36px; /* Larger font size for visibility */
+    color: var(--primary-color); /* Primary color for headings */
+}
+
+.faq .content p {
+    font-size: 16px; /* Standard font size for paragraph text */
+    color: color-mix(in srgb, var(--default-color), transparent 30%); /* Lightened default color for improved readability */
+}
+
+.faq .faq-container .faq-item {
+    background-color: var(--surface-color); /* Background color for each FAQ item */
+    position: relative; /* Establishes a positioning context for child elements */
+    padding: 25px; /* Inner spacing for comfort */
+    margin-bottom: 20px; /* Space between FAQ items */
+    box-shadow: 0px 5px 25px white; /* Soft shadow for depth */
+    transition: background-color 0.3s; /* Smooth transition for background color on hover */
+}
+
+    .faq .faq-container .faq-item:hover {
+        background-color: color-mix(in srgb, var(--accent-color), transparent 90%); /* Accent color on hover for interactivity */
+    }
+
+    .faq .faq-container .faq-item:last-child {
+        margin-bottom: 0; /* Removes margin for the last item */
+    }
+
+    .faq .faq-container .faq-item h3 {
+        font-weight: 600; /* Strong weight for FAQ titles */
+        font-size: 20px; /* Font size for titles */
+        line-height: 28px; /* Line height for readability */
+        margin: 0 30px 0 0; /* Margin for spacing */
+        cursor: pointer; /* Indicates that the title is clickable */
+        display: flex; /* Flexbox for alignment */
+        align-items: flex-start; /* Aligns items to the start of the container */
+        transition: color 0.3s; /* Smooth transition for title color on hover */
+    }
+
+        .faq .faq-container .faq-item h3 .num {
+            color: var(--accent-color); /* Accent color for numbering */
+            padding-right: 8px; /* Space between number and text */
+        }
+
+        .faq .faq-container .faq-item h3:hover {
+            color: var(--accent-color); /* Changes title color on hover for emphasis */
+        }
+
+    .faq .faq-container .faq-item .faq-content {
+        display: grid; /* Grid layout for FAQ content */
+        grid-template-rows: 0fr; /* Sets initial height to zero */
+        transition: visibility 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth transitions for visibility and opacity */
+        visibility: hidden; /* Initially hidden content */
+        opacity: 0; /* Fully transparent */
+    }
+
+        .faq .faq-container .faq-item .faq-content p {
+            margin-bottom: 0; /* Removes default bottom margin for paragraphs */
+        }
+
+    .faq .faq-container .faq-item .faq-toggle {
+        position: absolute; /* Positions the toggle button absolutely */
+        top: 20px; /* Distance from the top of the container */
+        right: 20px; /* Distance from the right side */
+        font-size: 16px; /* Font size for the toggle button */
+        transition: transform 0.3s; /* Smooth rotation for the toggle */
+        cursor: pointer; /* Indicates clickable element */
+    }
+
+        .faq .faq-container .faq-item .faq-toggle:hover {
+            color: var(--accent-color); /* Changes color on hover for visibility */
+        }
+
+.faq .faq-container .faq-active h3 {
+    color: var(--accent-color); /* Changes title color for active FAQ */
+}
+
+.faq .faq-container .faq-active .faq-content {
+    grid-template-rows: 1fr; /* Sets height to occupy space */
+    visibility: visible; /* Makes content visible when active */
+    opacity: 1; /* Fully opaque */
+    padding-top: 10px; /* Adds space above the content */
+}
+
+.faq .faq-container .faq-active .faq-toggle {
+    transform: rotate(90deg); /* Rotates toggle button when active */
+    color: var(--accent-color); /* Changes color to accent when active */
+}
+
+.faq .btn-link {
+    text-decoration: none; /* Removes underline from links */
+    color: inherit; /* Inherits color from parent */
+    font-size: 18px; /* Font size for links */
+    font-weight: 600; /* Bold weight for emphasis */
+}
+
+    .faq .btn-link:hover {
+        color: var(--accent-color); /* Changes link color on hover */
+    }
+
+/* Team section */
+.team {
+    background-color: #f9f9f9; /* Light background for contrast */
+    padding: 5rem 0;
+}
+
+.section-title h2 {
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.member-img {
+    position: relative;
+    overflow: hidden;
+}
+
+    .member-img img {
+        transition: transform 0.3s ease; /* Smooth image scale effect */
+    }
+
+    .member-img:hover img {
+        transform: scale(1.1); /* Scale image on hover */
+    }
+
+.social {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    position: absolute;
+    bottom: 10px; /* Position social icons at the bottom of the image */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease;
+}
+
+.member-img:hover .social {
+    opacity: 1; /* Show social icons on hover */
+}
+
+.card {
+    border-radius: 10px; /* Rounded corners for cards */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease; /* Smooth card hover effect */
+}
+
+    .card:hover {
+        transform: translateY(-10px); /* Lift effect on hover */
+    }
+
+.social-icon {
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+    .social-icon:hover {
+        color: #007bff; /* Change color on hover */
+    }
+
+.job-description {
+    font-style: italic; /* Italics for job descriptions */
+}
+
+
+.contact {
+    background: linear-gradient(135deg, #e7f0f7 0%, #cfd9df 100%);
+    padding: 60px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+    .section-title h2 {
+        font-size: 36px;
+        font-weight: bold;
+        color: #007bff; /* Primary color */
+    }
+
+    .section-title p {
+        font-size: 18px;
+        color: #555;
+    }
+
+.info-item {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+    .info-item i {
+        font-size: 36px;
+        color: #007bff; /* Match with the primary color */
+        margin-bottom: 10px;
+    }
+
+    .info-item h3 {
+        font-size: 20px;
+        margin: 15px 0;
+        color: #333;
+    }
+
+    .info-item p {
+        color: #666;
+    }
+
+    .info-item:hover {
+        transform: translateY(-5px);
+    }
+
+.php-email-form .form-control {
+    border: 1px solid #007bff;
+    border-radius: 8px;
+    padding: 15px;
+    transition: border-color 0.3s;
+}
+
+    .php-email-form .form-control:focus {
+        border-color: #0056b3; /* Darker blue on focus */
+    }
+
+.php-email-form button {
+    background-color: #007bff; /* Primary color */
+    color: #fff;
+    border-radius: 8px;
+    padding: 15px 30px;
+    border: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+    .php-email-form button:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+        transform: translateY(-2px);
+    }
+
+/*--------------------------------------------------------------
+# Service Details Section
+--------------------------------------------------------------*/
+
+/* The .service-box class defines the main container for each service detail. */
+.service-details .service-box {
+    background-color: var(--surface-color); /* Sets the background color using a CSS variable. */
+    padding: 20px; /* Adds padding inside the box for spacing. */
+    box-shadow: 0px 2px 20px white; /* Creates a soft shadow effect around the box. */
+}
+
+    /* Adds margin to the top of service boxes that follow another service box for spacing. */
+    .service-details .service-box + .service-box {
+        margin-top: 30px; /* Ensures space between consecutive service boxes. */
+    }
+
+    /* Styles for the service title within the service box. */
+    .service-details .service-box h4 {
+        font-size: 20px; /* Sets the font size for the heading. */
+        font-weight: 700; /* Makes the font bold. */
+        border-bottom: 2px solid color-mix(in srgb, var(--default-color), transparent 92%); /* Creates a bottom border with a mixed color. */
+        padding-bottom: 15px; /* Adds space below the heading. */
+        margin-bottom: 15px; /* Adds space below the heading. */
+    }
+
+/* Styles for the list of services. */
+.service-details .services-list {
+    background-color: var(--surface-color); /* Sets the background color for the services list. */
+}
+
+    /* Styles for each service link within the services list. */
+    .service-details .services-list a {
+        color: color-mix(in srgb, var(--default-color), transparent 20%); /* Sets the text color with a mixed color. */
+        background-color: color-mix(in srgb, var(--default-color), transparent 96%); /* Sets a light background color for the links. */
+        display: flex; /* Enables flexbox layout for easy alignment. */
+        align-items: center; /* Centers items vertically within the link. */
+        padding: 12px 15px; /* Adds padding around the link text. */
+        margin-top: 15px; /* Adds space above each link. */
+        transition: 0.3s; /* Smooth transition for hover effects. */
+    }
+
+        /* Removes top margin for the first link in the list. */
+        .service-details .services-list a:first-child {
+            margin-top: 0; /* Resets margin for the first link. */
+        }
+
+        /* Styles for icons within the service links. */
+        .service-details .services-list a i {
+            font-size: 16px; /* Sets the size of the icon. */
+            margin-right: 8px; /* Adds space between the icon and text. */
+            color: var(--accent-color); /* Sets the color of the icon using a variable. */
+        }
+
+        /* Styles for the active link in the services list. */
+        .service-details .services-list a.active {
+            color: var(--contrast-color); /* Changes text color for active link. */
+            background-color: var(--accent-color); /* Changes background color for active link. */
+        }
+
+            /* Changes icon color for active links. */
+            .service-details .services-list a.active i {
+                color: var(--contrast-color); /* Ensures icon matches the active link text color. */
+            }
+
+        /* Styles for hover effects on service links. */
+        .service-details .services-list a:hover {
+            background-color: color-mix(in srgb, var(--accent-color), transparent 95%); /* Changes background on hover. */
+            color: var(--accent-color); /* Changes text color on hover. */
+        }
+
+/* Styles for the download catalog section. */
+.service-details .download-catalog a {
+    color: var(--default-color); /* Sets text color for download links. */
+    display: flex; /* Enables flexbox for alignment. */
+    align-items: center; /* Centers items vertically. */
+    padding: 10px 0; /* Adds padding around the link. */
+    transition: 0.3s; /* Smooth transition for hover effects. */
+    border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%); /* Adds a top border with mixed color. */
+}
+
+    /* Resets border and padding for the first link in the download catalog. */
+    .service-details .download-catalog a:first-child {
+        border-top: 0; /* Removes the top border for the first link. */
+        padding-top: 0; /* Removes top padding for the first link. */
+    }
+
+    /* Resets padding for the last link in the download catalog. */
+    .service-details .download-catalog a:last-child {
+        padding-bottom: 0; /* Removes bottom padding for the last link. */
+    }
+
+    /* Styles for icons in the download catalog section. */
+    .service-details .download-catalog a i {
+        font-size: 24px; /* Sets icon size. */
+        margin-right: 8px; /* Adds space between icon and text. */
+        color: var(--accent-color); /* Sets icon color. */
+    }
+
+    /* Changes link color on hover for the download catalog. */
+    .service-details .download-catalog a:hover {
+        color: var(--accent-color); /* Changes text color on hover. */
+    }
+
+/* Styles for the help box. */
+.service-details .help-box {
+    background-color: var(--accent-color); /* Sets background color for the help box. */
+    color: var(--contrast-color); /* Sets text color for the help box. */
+    margin-top: 30px; /* Adds space above the help box. */
+    padding: 30px 15px; /* Adds padding inside the help box. */
+}
+
+    /* Styles for the help icon within the help box. */
+    .service-details .help-box .help-icon {
+        font-size: 48px; /* Sets icon size. */
+    }
+
+    /* Ensures text color for heading and links in the help box. */
+    .service-details .help-box h4,
+    .service-details .help-box a {
+        color: var(--contrast-color); /* Sets text color to contrast color. */
+    }
+
+/* Styles for images in the service details section. */
+.service-details .services-img {
+    margin-bottom: 20px; /* Adds space below the images. */
+}
+
+/* Styles for main service title. */
+.service-details h3 {
+    font-size: 26px; /* Sets font size for the main title. */
+    font-weight: 700; /* Makes the font bold. */
+}
+
+/* Styles for paragraphs in the service details section. */
+.service-details p {
+    font-size: 15px; /* Sets font size for paragraphs. */
+}
+
+/* Styles for lists in the service details section. */
+.service-details ul {
+    list-style: none; /* Removes default list style. */
+    padding: 0; /* Resets padding for the list. */
+    font-size: 15px; /* Sets font size for list items. */
+}
+
+    /* Styles for each list item in the service details section. */
+    .service-details ul li {
+        padding: 5px 0; /* Adds vertical space for list items. */
+        display: flex; /* Enables flexbox layout for list items. */
+        align-items: center; /* Centers items vertically. */
+    }
+
+    /* Styles for icons within list items. */
+    .service-details ul i {
+        font-size: 20px; /* Sets icon size. */
+        margin-right: 8px; /* Adds space between icon and text. */
+        color: var(--accent-color); /* Sets icon color using a variable. */
+    }
+
+.tooltip {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    z-index: 1000;
+    white-space: nowrap;
+}
+
+/*Login Form*/
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-form {
+    max-width: 400px;
+    width: 100%;
+    padding: 30px;
+    background-color: white; /* Light gray background */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.form-title {
+    text-align: center;
+    color: blue;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ced4da; /* Lighter border color */
+    border-radius: 5px;
+}
+
+.login-btn-primary {
+    background-color: #007bff; /* Professional blue color */
+    border: none;
+    color: #fff;
+    padding: 12px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Button width adjusted for smaller screens */
+}
+
+    .login-btn-primary:hover {
+        background-color: #0056b3; /* Darker shade of blue on hover */
+        color: #ffffff;
+    }
+
+.error-message {
+    color: #dc3545; /* Error color */
+    font-size: 14px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-link {
+    color: #007bff; /* Professional blue color */
+    text-decoration: none;
+}
+
+    .text-link:hover {
+        text-decoration: underline;
+    }
+
+/* Media Query for smaller screens */
+@media screen and (max-width: 768px) {
+    .login-form {
+        padding: 30px;
+    }
+}
+
+.password-toggle-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+    .password-toggle-container input[type="checkbox"] {
+        margin-right: 10px; /* Adds spacing between the checkbox and label text */
+    }
+
+.password-toggle-label {
+    cursor: pointer;
+}
+
+    .password-toggle-label span {
+        font-size: 14px;
+    }
+
+
+/*Forgot Password*/
+.forgot-password-container {
+    margin-top: 50px;
+}
+
+.password-reset-form {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border: 1px solid #e9e9e9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.card-body {
+    padding: 10px;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 12px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.forgot-password-btn-primary {
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    padding: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #fff;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+    .forgot-password-btn-primary:hover {
+        background-color: #0056b3;
+        color: white;
+    }
+
+/* Media Queries for Responsive Design */
+@media screen and (max-width: 780px) {
+    .password-reset-form {
+        max-width: 100%;
+    }
+}
+
+/* Sign Up */
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.register-form {
+    max-width: 500px;
+    width: 100%;
+    padding: 40px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    text-align: center;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 576px) {
+    .register-form {
+        padding: 20px; /* Reduce padding on smaller screens */
+        box-shadow: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .register-container {
+        padding: 10px; /* Add some breathing space */
+    }
+}
+
+
+.register-btn-primary {
+    background-color: #007bff; /* Professional blue color */
+    border: none;
+    color: #fff;
+    padding: 12px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    .register-btn-primary:hover {
+        background-color: #0056b3; /* Darker shade of blue on hover */
+        color: white;
+    }
+
+/* Navbar */
+.navbar {
+    font-family: "ubuntu-light", sans-serif;
+    background: #fff;
+    transition: background 0.25s ease;
+    -webkit-transition: background 0.25s ease;
+    -moz-transition: background 0.25s ease;
+    -ms-transition: background 0.25s ease;
+}
+
+    .navbar .navbar-brand {
+        width: 110px;
+    }
+
+    .navbar .navbar-brand-wrapper {
+        transition: width 0.25s ease, background 0.25s ease;
+        -webkit-transition: width 0.25s ease, background 0.25s ease;
+        -moz-transition: width 0.25s ease, background 0.25s ease;
+        -ms-transition: width 0.25s ease, background 0.25s ease;
+        background: #fff;
+        width: 260px;
+        height: 70px;
+    }
+
+@media (max-width: 991px) {
+    .navbar .navbar-brand-wrapper {
+        width: 55px;
+    }
+}
+
+.navbar .navbar-brand-wrapper .navbar-brand {
+    color: #27367f;
+    font-size: 1.5rem;
+    line-height: 48px;
+    margin-right: 0;
+    padding: 0.25rem 0;
+    width: 100%;
+    text-align: left;
+    padding-left: 2.25rem;
+}
+
+    .navbar .navbar-brand-wrapper .navbar-brand:active, .navbar .navbar-brand-wrapper .navbar-brand:focus, .navbar .navbar-brand-wrapper .navbar-brand:hover {
+        color: #1b2658;
+    }
+
+    .navbar .navbar-brand-wrapper .navbar-brand img {
+        width: calc(260px - 120px);
+        max-width: 100%;
+        height: 28px;
+        margin: auto;
+        vertical-align: middle;
+    }
+
+    .navbar .navbar-brand-wrapper .navbar-brand.brand-logo-mini {
+        display: none;
+    }
+
+        .navbar .navbar-brand-wrapper .navbar-brand.brand-logo-mini img {
+            width: calc(70px - 50px);
+            max-width: 100%;
+            height: 28px;
+            margin: auto;
+        }
+
+.navbar .navbar-menu-wrapper {
+    transition: width 0.25s ease;
+    -webkit-transition: width 0.25s ease;
+    -moz-transition: width 0.25s ease;
+    -ms-transition: width 0.25s ease;
+    color: #9c9fa6;
+    padding-left: 24px;
+    padding-right: 24px;
+    width: calc(100% - 260px);
+    height: 70px;
+}
+
+@media (max-width: 991px) {
+    .navbar .navbar-menu-wrapper {
+        width: auto;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+.navbar .navbar-menu-wrapper .navbar-toggler {
+    border: 0;
+    color: inherit;
+    height: 70px;
+    border-radius: 0px;
+    padding-left: 5px;
+    padding-right: 20px;
+}
+
+    .navbar .navbar-menu-wrapper .navbar-toggler:not(.navbar-toggler-right) {
+        font-size: 1.5rem;
+    }
+
+        .navbar .navbar-menu-wrapper .navbar-toggler:not(.navbar-toggler-right):focus {
+            box-shadow: none;
+        }
+
+@media (max-width: 991px) {
+    .navbar .navbar-menu-wrapper .navbar-toggler:not(.navbar-toggler-right) {
+        display: none;
+    }
+}
+
+@media (max-width: 991px) {
+    .navbar .navbar-menu-wrapper .navbar-toggler.navbar-toggler-right {
+        padding-left: 15px;
+        padding-right: 11px;
+        border-right: none;
+    }
+}
+
+.navbar .navbar-menu-wrapper .navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.navbar .navbar-menu-wrapper .search-field .input-group input {
+    font-size: 0.875rem;
+    padding: 0.5rem;
+}
+
+    .navbar .navbar-menu-wrapper .search-field .input-group input:-ms-input-placeholder {
+        font-size: 0.875rem;
+        color: #9c9fa6;
+        font-family: "ubuntu-light", sans-serif;
+    }
+
+    .navbar .navbar-menu-wrapper .search-field .input-group input:-moz-placeholder {
+        font-size: 0.875rem;
+        color: #9c9fa6;
+        font-family: "ubuntu-light", sans-serif;
+    }
+
+    .navbar .navbar-menu-wrapper .search-field .input-group input::-moz-placeholder {
+        font-size: 0.875rem;
+        color: #9c9fa6;
+        font-family: "ubuntu-light", sans-serif;
+    }
+
+    .navbar .navbar-menu-wrapper .search-field .input-group input::-webkit-input-placeholder {
+        font-size: 0.875rem;
+        color: #9c9fa6;
+        font-family: "ubuntu-light", sans-serif;
+    }
+
+.navbar .navbar-menu-wrapper .search-field .input-group i {
+    font-size: 17px;
+    margin-right: 0;
+    color: #9c9fa6;
+}
+
+.navbar .navbar-menu-wrapper .search-field .input-group .input-group-text {
+    background: transparent;
+}
+
+.navbar .navbar-menu-wrapper .count-indicator {
+    position: relative;
+}
+
+    .navbar .navbar-menu-wrapper .count-indicator .count-symbol,
+    .navbar .navbar-menu-wrapper .count-indicator .count-number {
+        position: absolute;
+        border-radius: 100%;
+        border: 2px solid #ffffff;
+    }
+
+    .navbar .navbar-menu-wrapper .count-indicator .count-symbol {
+        top: 17px;
+        right: -3px;
+        width: 10px;
+        height: 10px;
+    }
+
+    .navbar .navbar-menu-wrapper .count-indicator .count-number {
+        min-width: 14px;
+        height: 14px;
+        font-size: 0.5rem;
+        color: #ffffff;
+        bottom: 16px;
+        right: -5px;
+        line-height: 1;
+        text-align: center;
+    }
+
+    .navbar .navbar-menu-wrapper .count-indicator:after {
+        display: none;
+    }
+
+.navbar .navbar-menu-wrapper .navbar-nav {
+    flex-direction: row;
+    align-items: center;
+}
+
+    .navbar .navbar-menu-wrapper .navbar-nav .nav-item .nav-link {
+        color: inherit;
+        font-size: 0.875rem;
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+        height: 70px;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+
+@media (max-width: 767px) {
+    .navbar .navbar-menu-wrapper .navbar-nav .nav-item .nav-link {
+        margin-left: 0.8rem;
+        margin-right: 0.8rem;
+    }
+}
+
+.navbar .navbar-menu-wrapper .navbar-nav .nav-item .nav-link i {
+    font-size: 1.25rem;
+}
+
+.navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .dropdown-toggle:after {
+    color: #b66dff;
+    font-size: 1rem;
+}
+
+.navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .dropdown-menu {
+    border: none;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 3px 21px 0px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 3px 21px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 3px 21px 0px rgba(0, 0, 0, 0.2);
+}
+
+    .navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .dropdown-menu.navbar-dropdown {
+        position: absolute;
+        font-size: 0.9rem;
+        margin-top: 0;
+        padding: 0;
+    }
+
+.rtl .navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .dropdown-menu.navbar-dropdown {
+    right: auto;
+    left: 0;
+}
+
+.navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .dropdown-menu.navbar-dropdown .dropdown-item {
+    margin-bottom: 0;
+    padding: 11px 13px;
+    cursor: pointer;
+}
+
+    .navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .dropdown-menu.navbar-dropdown .dropdown-item:hover {
+        color: #000;
+    }
+
+    .navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .dropdown-menu.navbar-dropdown .dropdown-item i {
+        font-size: 17px;
+    }
+
+    .navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .dropdown-menu.navbar-dropdown .dropdown-item .ellipsis {
+        max-width: 200px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+.rtl .navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .dropdown-menu.navbar-dropdown .dropdown-item i {
+    margin-left: 10px;
+}
+
+.navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .dropdown-menu.navbar-dropdown .dropdown-divider {
+    margin: 0;
+}
+
+@media (max-width: 991px) {
+    .navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown {
+        position: static;
+    }
+
+        .navbar .navbar-menu-wrapper .navbar-nav .nav-item.dropdown .navbar-dropdown {
+            left: 20px;
+            right: 20px;
+            top: 70px;
+            width: calc(100% - 40px);
+        }
+}
+
+.navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-settings {
+    padding-left: 20px;
+    padding-right: 5px;
+}
+
+    .navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-settings .nav-link {
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+.navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-profile .nav-link .nav-profile-img {
+    position: relative;
+    width: 32px;
+    height: 32px;
+}
+
+    .navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-profile .nav-link .nav-profile-img img {
+        width: 32px;
+        height: 32px;
+        border-radius: 100%;
+    }
+
+    .navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-profile .nav-link .nav-profile-img .availability-status {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-radius: 100%;
+        border: 2px solid #ffffff;
+        bottom: 5px;
+        right: -5px;
+    }
+
+        .navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-profile .nav-link .nav-profile-img .availability-status.online {
+            background: #1bcfb4;
+        }
+
+        .navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-profile .nav-link .nav-profile-img .availability-status.offline {
+            background: #fe7c96;
+        }
+
+        .navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-profile .nav-link .nav-profile-img .availability-status.busy {
+            background: #fed713;
+        }
+
+.navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-profile .nav-link .nav-profile-text {
+    margin-left: 1.25rem;
+}
+
+.rtl .navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-profile .nav-link .nav-profile-text {
+    margin-left: 0;
+    margin-right: 1.25rem;
+}
+
+.navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-profile .nav-link .nav-profile-text p {
+    line-height: 1;
+}
+
+@media (max-width: 767px) {
+    .navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-profile .nav-link .nav-profile-text {
+        display: none;
+    }
+}
+
+.navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-profile .nav-link.dropdown-toggle:after {
+    line-height: 2;
+}
+
+@media (min-width: 992px) {
+    .navbar .navbar-menu-wrapper .navbar-nav.navbar-nav-right {
+        margin-left: auto;
+    }
+
+    .rtl .navbar .navbar-menu-wrapper .navbar-nav.navbar-nav-right {
+        margin-left: 0;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 991px) {
+    .navbar {
+        flex-direction: row;
+    }
+
+        .navbar .navbar-brand-wrapper {
+            width: 75px;
+        }
+
+            .navbar .navbar-brand-wrapper .navbar-brand.brand-logo {
+                display: none;
+            }
+
+            .navbar .navbar-brand-wrapper .navbar-brand.brand-logo-mini {
+                display: inline-block;
+            }
+
+    .navbar-collapse {
+        display: flex;
+        margin-top: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar .navbar-brand-wrapper {
+        width: 55px;
+    }
+
+        .navbar .navbar-brand-wrapper .brand-logo-mini {
+            padding-top: 0px;
+        }
+}
+/* Navbar color variations */
+.navbar.navbar-primary .navbar-menu-wrapper {
+    background: linear-gradient(to right, #da8cff, #9a55ff);
+    color: #ffffff;
+}
+
+    .navbar.navbar-primary .navbar-menu-wrapper .search-field .input-group input:-ms-input-placeholder {
+        color: #ffffff;
+    }
+
+    .navbar.navbar-primary .navbar-menu-wrapper .search-field .input-group input:-moz-placeholder {
+        color: #ffffff;
+    }
+
+    .navbar.navbar-primary .navbar-menu-wrapper .search-field .input-group input::-moz-placeholder {
+        color: #ffffff;
+    }
+
+    .navbar.navbar-primary .navbar-menu-wrapper .search-field .input-group input::-webkit-input-placeholder {
+        color: #ffffff;
+    }
+
+    .navbar.navbar-primary .navbar-menu-wrapper .search-field .input-group i {
+        color: #ffffff;
+    }
+
+.navbar.navbar-secondary .navbar-menu-wrapper {
+    background: linear-gradient(to right, #e7ebf0, #868e96);
+    color: #ffffff;
+}
+
+    .navbar.navbar-secondary .navbar-menu-wrapper .search-field .input-group input:-ms-input-placeholder {
+        color: #ffffff;
+    }
+
+    .navbar.navbar-secondary .navbar-menu-wrapper .search-field .input-group input:-moz-placeholder {
+        color: #ffffff;
+    }
+
+    .navbar.navbar-secondary .navbar-menu-wrapper .search-field .input-group input::-moz-placeholder {
+        color: #ffffff;
+    }
+
+    .navbar.navbar-secondary .navbar-menu-wrapper .search-field .input-group input::-webkit-input-placeholder {
+        color: #ffffff;
+    }
+
+    .navbar.navbar-secondary .navbar-menu-wrapper .search-field .input-group i {
+        color: #ffffff;
+    }
+
+.navbar.navbar-success .navbar-menu-wrapper {
+    background: linear-gradient(to right, #84d9d2, #07cdae);
+    color: #ffffff;
+}
+
+    .navbar.navbar-success .navbar-menu-wrapper .search-field .input-group input:-ms-input-placeholder {
+        color: #ffffff;
+    }
+
+    .navbar.navbar-success .navbar-menu-wrapper .search-field .input-group input:-moz-placeholder {
+        color: #ffffff;
+    }
+
+    .navbar.navbar-success .navbar-menu-wrapper .search-field .input-group input::-moz-placeholder {
+        color: #ffffff;
+    }
+
+    .navbar.navbar-success .navbar-menu-wrapper .search-field .input-group input::-webkit-input-placeholder {
+        color: #ffffff;
+    }
+
+    .navbar.navbar-success .navbar-menu-wrapper .search-field .input-group i {
+        color: #ffffff;
+    }
+
+.navbar.navbar-info .navbar-menu-wrapper {
+    background: linear-gradient(to right, #90caf9, #047edf 99%);
+    color: #ffffff;
+}
+
+    .navbar.navbar-info .navbar-menu-wrapper .search-field .input-group input:-ms-input-placeholder {
+        color: #ffffff;
+    }
+
+    .navbar.navbar-info .navbar-menu-wrapper .search-field .input-group input:-moz-placeholder {
+        color: #ffffff;
+    }
+
+    .navbar.navbar-info .navbar-menu-wrapper .search-field .input-group input::-moz-placeholder {
+        color: #ffffff;
+    }
+
+    .navbar.navbar-info .navbar-menu-wrapper .search-field .input-group input::-webkit-input-placeholder {
+        color: #ffffff;
+    }
+
+    .navbar.navbar-info .navbar-menu-wrapper .search-field .input-group i {
+        color: #ffffff;
+    }
+
+.navbar.navbar-warning .navbar-menu-wrapper {
+    background: linear-gradient(to right, #f6e384, #ffd500);
+    color: #ffffff;
+}
+
+    .navbar.navbar-warning .navbar-menu-wrapper .search-field .input-group input:-ms-input-placeholder {
+        color: #ffffff;
+    }
+
+    .navbar.navbar-warning .navbar-menu-wrapper .search-field .input-group input:-moz-placeholder {
+        color: #ffffff;
+    }
+
+    .navbar.navbar-warning .navbar-menu-wrapper .search-field .input-group input::-moz-placeholder {
+        color: #ffffff;
+    }
+
+    .navbar.navbar-warning .navbar-menu-wrapper .search-field .input-group input::-webkit-input-placeholder {
+        color: #ffffff;
+    }
+
+    .navbar.navbar-warning .navbar-menu-wrapper .search-field .input-group i {
+        color: #ffffff;
+    }
+
+.navbar.navbar-danger .navbar-menu-wrapper {
+    background: linear-gradient(to right, #ffbf96, #fe7096);
+    color: #ffffff;
+}
+
+    .navbar.navbar-danger .navbar-menu-wrapper .search-field .input-group input:-ms-input-placeholder {
+        color: #ffffff;
+    }
+
+    .navbar.navbar-danger .navbar-menu-wrapper .search-field .input-group input:-moz-placeholder {
+        color: #ffffff;
+    }
+
+    .navbar.navbar-danger .navbar-menu-wrapper .search-field .input-group input::-moz-placeholder {
+        color: #ffffff;
+    }
+
+    .navbar.navbar-danger .navbar-menu-wrapper .search-field .input-group input::-webkit-input-placeholder {
+        color: #ffffff;
+    }
+
+    .navbar.navbar-danger .navbar-menu-wrapper .search-field .input-group i {
+        color: #ffffff;
+    }
+
+.navbar.navbar-light .navbar-menu-wrapper {
+    background: linear-gradient(to bottom, #f4f4f4, #e4e4e9);
+    color: #ffffff;
+}
+
+    .navbar.navbar-light .navbar-menu-wrapper .search-field .input-group input:-ms-input-placeholder {
+        color: #ffffff;
+    }
+
+    .navbar.navbar-light .navbar-menu-wrapper .search-field .input-group input:-moz-placeholder {
+        color: #ffffff;
+    }
+
+    .navbar.navbar-light .navbar-menu-wrapper .search-field .input-group input::-moz-placeholder {
+        color: #ffffff;
+    }
+
+    .navbar.navbar-light .navbar-menu-wrapper .search-field .input-group input::-webkit-input-placeholder {
+        color: #ffffff;
+    }
+
+    .navbar.navbar-light .navbar-menu-wrapper .search-field .input-group i {
+        color: #ffffff;
+    }
+
+.navbar.navbar-dark .navbar-menu-wrapper {
+    background: linear-gradient(89deg, #5e7188, #3e4b5b);
+    color: #ffffff;
+}
+
+    .navbar.navbar-dark .navbar-menu-wrapper .search-field .input-group input:-ms-input-placeholder {
+        color: #ffffff;
+    }
+
+    .navbar.navbar-dark .navbar-menu-wrapper .search-field .input-group input:-moz-placeholder {
+        color: #ffffff;
+    }
+
+    .navbar.navbar-dark .navbar-menu-wrapper .search-field .input-group input::-moz-placeholder {
+        color: #ffffff;
+    }
+
+    .navbar.navbar-dark .navbar-menu-wrapper .search-field .input-group input::-webkit-input-placeholder {
+        color: #ffffff;
+    }
+
+    .navbar.navbar-dark .navbar-menu-wrapper .search-field .input-group i {
+        color: #ffffff;
+    }
+
+/* Sidebar */
+.sidebar {
+    min-height: calc(100vh - 70px);
+    background: #ffffff;
+    font-family: "ubuntu-regular", sans-serif;
+    padding: 0;
+    width: 260px;
+    z-index: 11;
+    transition: width 0.25s ease, background 0.25s ease;
+    -webkit-transition: width 0.25s ease, background 0.25s ease;
+    -moz-transition: width 0.25s ease, background 0.25s ease;
+    -ms-transition: width 0.25s ease, background 0.25s ease;
+}
+
+    .sidebar .nav {
+        overflow: hidden;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        margin-bottom: 60px;
+    }
+
+        .sidebar .nav .nav-item {
+            padding: 0 2.25rem;
+            -webkit-transition-duration: 0.25s;
+            -moz-transition-duration: 0.25s;
+            -o-transition-duration: 0.25s;
+            transition-duration: 0.25s;
+            transition-property: background;
+            -webkit-transition-property: background;
+        }
+
+            .sidebar .nav .nav-item .collapse {
+                z-index: 999;
+            }
+
+            .sidebar .nav .nav-item .nav-link {
+                display: -webkit-flex;
+                display: flex;
+                -webkit-align-items: center;
+                align-items: center;
+                white-space: nowrap;
+                padding: 1.125rem 0 1.125rem 0;
+                color: #3e4b5b;
+                -webkit-transition-duration: 0.45s;
+                -moz-transition-duration: 0.45s;
+                -o-transition-duration: 0.45s;
+                transition-duration: 0.45s;
+                transition-property: color;
+                -webkit-transition-property: color;
+            }
+
+                .sidebar .nav .nav-item .nav-link i {
+                    color: inherit;
+                }
+
+                    .sidebar .nav .nav-item .nav-link i.menu-icon {
+                        font-size: 1.125rem;
+                        line-height: 1;
+                        margin-left: auto;
+                        color: rgba(187, 168, 191, 0.9607843137);
+                    }
+
+.rtl .sidebar .nav .nav-item .nav-link i.menu-icon {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.sidebar .nav .nav-item .nav-link i.menu-icon:before {
+    vertical-align: middle;
+}
+
+.sidebar .nav .nav-item .nav-link i.menu-arrow {
+    font: normal normal normal 24px/1 "Material Design Icons";
+    line-height: 1;
+    font-size: 1.125rem;
+    margin-left: auto;
+    color: #9e9da0;
+}
+
+.rtl .sidebar .nav .nav-item .nav-link i.menu-arrow {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.sidebar .nav .nav-item .nav-link i.menu-arrow:before {
+    content: "\f0141";
+    font-size: inherit;
+    color: inherit;
+}
+
+.rtl .sidebar .nav .nav-item .nav-link i.menu-arrow:before {
+    content: "\f0142";
+}
+
+.sidebar .nav .nav-item .nav-link i.menu-arrow + .menu-icon {
+    margin-left: 0.25rem;
+}
+
+.rtl .sidebar .nav .nav-item .nav-link i.menu-arrow + .menu-icon {
+    margin-left: 0;
+    margin-right: 0.25rem;
+}
+
+.sidebar .nav .nav-item .nav-link .menu-title {
+    color: inherit;
+    display: inline-block;
+    font-size: 0.875rem;
+    line-height: 1;
+    vertical-align: middle;
+    white-space: normal;
+}
+
+.sidebar .nav .nav-item .nav-link .badge {
+    margin-right: auto;
+    margin-left: 1rem;
+}
+
+.sidebar .nav .nav-item .nav-link[aria-expanded=true] .menu-arrow:before {
+    content: "\f0140";
+}
+
+.sidebar .nav .nav-item.active {
+    background: #ffffff;
+}
+
+    .sidebar .nav .nav-item.active > .nav-link .menu-title {
+        color: #b66dff;
+        font-family: "ubuntu-medium", sans-serif;
+    }
+
+    .sidebar .nav .nav-item.active > .nav-link i {
+        color: #b66dff;
+    }
+
+.sidebar .nav .nav-item:hover {
+    background: #fcfcfc;
+}
+
+.sidebar .nav .nav-item.nav-profile .nav-link {
+    height: auto;
+    line-height: 1;
+    border-top: 0;
+    padding: 1.25rem 0;
+}
+
+    .sidebar .nav .nav-item.nav-profile .nav-link .nav-profile-image {
+        width: 44px;
+        height: 44px;
+    }
+
+        .sidebar .nav .nav-item.nav-profile .nav-link .nav-profile-image img {
+            width: 44px;
+            height: 44px;
+            border-radius: 100%;
+        }
+
+    .sidebar .nav .nav-item.nav-profile .nav-link .nav-profile-text {
+        margin-left: 1rem;
+    }
+
+.rtl .sidebar .nav .nav-item.nav-profile .nav-link .nav-profile-text {
+    margin-left: auto;
+    margin-right: 1rem;
+}
+
+.sidebar .nav .nav-item.nav-profile .nav-link .nav-profile-badge {
+    font-size: 1.125rem;
+    margin-left: auto;
+}
+
+.rtl .sidebar .nav .nav-item.nav-profile .nav-link .nav-profile-badge {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.sidebar .nav .nav-item.sidebar-actions {
+    margin-top: 1rem;
+}
+
+    .sidebar .nav .nav-item.sidebar-actions .nav-link {
+        border-top: 0;
+        display: block;
+        height: auto;
+    }
+
+    .sidebar .nav .nav-item.sidebar-actions:hover {
+        background: initial;
+    }
+
+        .sidebar .nav .nav-item.sidebar-actions:hover .nav-link {
+            color: initial;
+        }
+
+.sidebar .nav:not(.sub-menu) > .nav-item:hover:not(.nav-category):not(.nav-profile) > .nav-link {
+    color: #29323d;
+}
+
+.sidebar .nav.sub-menu {
+    margin-bottom: 20px;
+    margin-top: 0;
+    list-style: none;
+}
+
+    .sidebar .nav.sub-menu .nav-item {
+        padding: 0;
+    }
+
+        .sidebar .nav.sub-menu .nav-item .nav-link {
+            color: #888;
+            padding: 0.75rem 2rem 0.75rem 2rem;
+            position: relative;
+            font-size: 0.8125rem;
+            line-height: 1;
+            height: auto;
+            border-top: 0;
+        }
+
+            .sidebar .nav.sub-menu .nav-item .nav-link:before {
+                content: "\f0054";
+                font-family: "Material Design Icons";
+                display: block;
+                position: absolute;
+                left: 0px;
+                top: 50%;
+                -moz-transform: translateY(-50%);
+                -o-transform: translateY(-50%);
+                -ms-transform: translateY(-50%);
+                -webkit-transform: translateY(-50%);
+                transform: translateY(-50%);
+                color: #a2a2a2;
+                font-size: 0.75rem;
+            }
+
+.rtl .sidebar .nav.sub-menu .nav-item .nav-link:before {
+    content: "\f04d";
+    left: auto;
+    right: 0;
+}
+
+.sidebar .nav.sub-menu .nav-item .nav-link.active {
+    color: #b66dff;
+    background: transparent;
+}
+
+.sidebar .nav.sub-menu .nav-item .nav-link:hover {
+    color: #555555;
+}
+
+.sidebar .nav.sub-menu .nav-item:hover {
+    background: transparent;
+}
+
+.sidebar-dark .sidebar {
+    background: #18151e;
+}
+
+    .sidebar-dark .sidebar .nav .nav-item .nav-link {
+        color: #ffffff;
+    }
+
+        .sidebar-dark .sidebar .nav .nav-item .nav-link i {
+            color: inherit;
+        }
+
+            .sidebar-dark .sidebar .nav .nav-item .nav-link i.menu-icon {
+                color: rgba(187, 168, 191, 0.9607843137);
+            }
+
+            .sidebar-dark .sidebar .nav .nav-item .nav-link i.menu-arrow {
+                color: #9e9da0;
+            }
+
+                .sidebar-dark .sidebar .nav .nav-item .nav-link i.menu-arrow:before {
+                    color: inherit;
+                }
+
+        .sidebar-dark .sidebar .nav .nav-item .nav-link .menu-title {
+            color: inherit;
+        }
+
+    .sidebar-dark .sidebar .nav .nav-item.active {
+        background: #282037;
+    }
+
+        .sidebar-dark .sidebar .nav .nav-item.active > .nav-link .menu-title {
+            color: #b3b3b3;
+        }
+
+        .sidebar-dark .sidebar .nav .nav-item.active > .nav-link i {
+            color: #b66dff;
+        }
+
+    .sidebar-dark .sidebar .nav .nav-item:hover {
+        background: #302a3c;
+    }
+
+    .sidebar-dark .sidebar .nav .nav-item.sidebar-actions:hover {
+        background: initial;
+    }
+
+        .sidebar-dark .sidebar .nav .nav-item.sidebar-actions:hover .nav-link {
+            color: initial;
+        }
+
+    .sidebar-dark .sidebar .nav:not(.sub-menu) > .nav-item:hover:not(.nav-category):not(.nav-profile) > .nav-link {
+        color: #ffffff;
+    }
+
+    .sidebar-dark .sidebar .nav.sub-menu .nav-item .nav-link {
+        color: #ffffff;
+    }
+
+        .sidebar-dark .sidebar .nav.sub-menu .nav-item .nav-link:before {
+            color: white;
+        }
+
+        .sidebar-dark .sidebar .nav.sub-menu .nav-item .nav-link.active {
+            color: #b3b3b3;
+            background: transparent;
+        }
+
+        .sidebar-dark .sidebar .nav.sub-menu .nav-item .nav-link:hover {
+            color: #b3b3b3;
+        }
+
+    .sidebar-dark .sidebar .nav.sub-menu .nav-item:hover {
+        background: transparent;
+    }
+
+/* style for off-canvas menu*/
+@media screen and (max-width: 991px) {
+    .sidebar-offcanvas {
+        position: fixed;
+        max-height: calc(100vh - 70px);
+        top: 70px;
+        bottom: 0;
+        overflow: auto;
+        right: -260px;
+        -webkit-transition: all 0.25s ease-out;
+        -o-transition: all 0.25s ease-out;
+        transition: all 0.25s ease-out;
+    }
+
+        .sidebar-offcanvas.active {
+            right: 0;
+        }
+}
+/* Layouts */
+.navbar.fixed-top + .page-body-wrapper {
+    padding-top: 70px;
+}
+
+@media (min-width: 992px) {
+    .sidebar-mini .navbar .navbar-brand-wrapper {
+        width: 185px;
+    }
+
+    .sidebar-mini .navbar .navbar-menu-wrapper {
+        width: calc(100% - 185px);
+    }
+
+    .sidebar-mini .sidebar {
+        width: 185px;
+    }
+
+        .sidebar-mini .sidebar .nav .nav-item {
+            padding: 0;
+            margin: 0;
+        }
+
+            .sidebar-mini .sidebar .nav .nav-item .nav-link {
+                display: -webkit-flex;
+                display: flex;
+                -webkit-align-items: center;
+                align-items: center;
+                -webkit-justify-content: center;
+                justify-content: center;
+                -webkit-flex-direction: column-reverse;
+                flex-direction: column-reverse;
+                text-align: center;
+                position: relative;
+                border-bottom: none;
+            }
+
+                .sidebar-mini .sidebar .nav .nav-item .nav-link .menu-title {
+                    display: block;
+                    margin: auto;
+                }
+
+                .sidebar-mini .sidebar .nav .nav-item .nav-link .menu-sub-title {
+                    margin: auto;
+                }
+
+                .sidebar-mini .sidebar .nav .nav-item .nav-link .badge {
+                    margin-left: 5px;
+                    display: none;
+                }
+
+                .sidebar-mini .sidebar .nav .nav-item .nav-link i.menu-icon {
+                    display: block;
+                    margin-right: auto;
+                    margin-left: auto;
+                }
+
+                .sidebar-mini .sidebar .nav .nav-item .nav-link i.menu-arrow {
+                    display: inline-block;
+                    margin-left: 5px;
+                    position: absolute;
+                    top: 50%;
+                    right: 10px;
+                    -moz-transform: translateY(-50%);
+                    -o-transform: translateY(-50%);
+                    -ms-transform: translateY(-50%);
+                    -webkit-transform: translateY(-50%);
+                    transform: translateY(-50%);
+                }
+
+                    .sidebar-mini .sidebar .nav .nav-item .nav-link i.menu-arrow:before {
+                        content: "\f0140";
+                    }
+
+                .sidebar-mini .sidebar .nav .nav-item .nav-link[aria-expanded=true] .menu-arrow:before {
+                    content: "\f0143";
+                }
+
+    .sidebar-mini .main-panel {
+        width: calc(100% - 185px);
+    }
+
+    .sidebar-mini:not(.sidebar-icon-only) .sidebar .nav:not(.sub-menu) > .nav-item {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+        .sidebar-mini:not(.sidebar-icon-only) .sidebar .nav:not(.sub-menu) > .nav-item .nav-link {
+            height: auto;
+            padding: 0.8125rem 1rem 0.8125rem 1rem;
+        }
+
+            .sidebar-mini:not(.sidebar-icon-only) .sidebar .nav:not(.sub-menu) > .nav-item .nav-link i.menu-icon {
+                margin-bottom: 0.5rem;
+            }
+
+    .sidebar-mini:not(.sidebar-icon-only) .sidebar .nav.sub-menu {
+        padding: 0;
+        border-top: none;
+    }
+
+        .sidebar-mini:not(.sidebar-icon-only) .sidebar .nav.sub-menu .nav-item .nav-link {
+            padding: 7px 0 7px 25px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            text-align: left;
+            width: 66%;
+        }
+}
+
+@media (min-width: 992px) {
+    .sidebar-icon-only .navbar .navbar-brand-wrapper {
+        width: 70px;
+    }
+
+        .sidebar-icon-only .navbar .navbar-brand-wrapper .brand-logo {
+            display: none;
+        }
+
+        .sidebar-icon-only .navbar .navbar-brand-wrapper .brand-logo-mini {
+            display: inline-block;
+        }
+
+    .sidebar-icon-only .navbar .navbar-menu-wrapper {
+        width: calc(100% - 70px);
+    }
+
+    .sidebar-icon-only .sidebar {
+        width: 70px;
+    }
+
+        .sidebar-icon-only .sidebar .nav {
+            overflow: visible;
+        }
+
+            .sidebar-icon-only .sidebar .nav .nav-item {
+                position: relative;
+                padding: 0;
+            }
+
+                .sidebar-icon-only .sidebar .nav .nav-item .nav-link {
+                    display: block;
+                    text-align: center;
+                }
+
+                    .sidebar-icon-only .sidebar .nav .nav-item .nav-link .menu-title,
+                    .sidebar-icon-only .sidebar .nav .nav-item .nav-link .badge, .sidebar-icon-only .sidebar .nav .nav-item .nav-link .menu-sub-title {
+                        display: none;
+                    }
+
+                    .sidebar-icon-only .sidebar .nav .nav-item .nav-link .menu-title {
+                        border-radius: 0 5px 5px 0px;
+                    }
+
+    .rtl.sidebar-icon-only .sidebar .nav .nav-item .nav-link .menu-title {
+        border-radius: 5px 0 0 5px;
+    }
+
+    .sidebar-icon-only .sidebar .nav .nav-item .nav-link i.menu-icon {
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .sidebar-icon-only .sidebar .nav .nav-item .nav-link i.menu-arrow {
+        display: none;
+    }
+
+    .sidebar-icon-only .sidebar .nav .nav-item .nav-link[aria-expanded] .menu-title {
+        border-radius: 0 5px 0 0px;
+    }
+
+    .rtl.sidebar-icon-only .sidebar .nav .nav-item .nav-link[aria-expanded] .menu-title {
+        border-radius: 5px 0 0 0;
+    }
+
+    .sidebar-icon-only .sidebar .nav .nav-item.nav-profile {
+        display: none;
+    }
+
+    .sidebar-icon-only .sidebar .nav .nav-item.nav-category {
+        display: none;
+    }
+
+    .sidebar-icon-only .sidebar .nav .nav-item.nav-doc {
+        margin: 0;
+    }
+
+        .sidebar-icon-only .sidebar .nav .nav-item.nav-doc i {
+            display: block;
+        }
+
+    .sidebar-icon-only .sidebar .nav .nav-item .collapse {
+        display: none;
+    }
+
+    .sidebar-icon-only .sidebar .nav .nav-item.hover-open .nav-link .menu-title {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-align-items: center;
+        align-items: center;
+        background: #fcfcfc;
+        padding: 0.5rem 1.4rem;
+        left: 70px;
+        position: absolute;
+        text-align: left;
+        top: 0;
+        bottom: 0;
+        width: 190px;
+        z-index: 1;
+        line-height: 1.8;
+    }
+
+    .sidebar-dark.sidebar-icon-only .sidebar .nav .nav-item.hover-open .nav-link .menu-title {
+        background: #282037;
+    }
+
+    .rtl.sidebar-icon-only .sidebar .nav .nav-item.hover-open .nav-link .menu-title {
+        left: auto;
+        right: 70px;
+        text-align: left;
+    }
+
+    .sidebar-dark.sidebar-icon-only .sidebar .nav .nav-item.hover-open .nav-link .menu-title {
+        color: #ffffff;
+    }
+
+    .sidebar-icon-only .sidebar .nav .nav-item.hover-open .nav-link .menu-title:after {
+        display: none;
+    }
+
+    .sidebar-icon-only .sidebar .nav .nav-item.hover-open .collapse,
+    .sidebar-icon-only .sidebar .nav .nav-item.hover-open .collapsing {
+        display: block;
+        padding: 0.5rem 0;
+        background: #fcfcfc;
+        border-radius: 0 0 5px 0;
+        position: absolute;
+        left: 70px;
+        width: 190px;
+    }
+
+    .sidebar-dark.sidebar-icon-only .sidebar .nav .nav-item.hover-open .collapse, .sidebar-dark.sidebar-icon-only .sidebar .nav .nav-item.hover-open .collapsing {
+        background: #18151e;
+    }
+
+    .rtl.sidebar-icon-only .sidebar .nav .nav-item.hover-open .collapse, .rtl.sidebar-icon-only .sidebar .nav .nav-item.hover-open .collapsing {
+        left: auto;
+        right: 70px;
+        border-radius: 0 0 0 5px;
+    }
+
+    .sidebar-icon-only .sidebar .nav.sub-menu {
+        padding: 0 0 0 1.5rem;
+    }
+
+        .sidebar-icon-only .sidebar .nav.sub-menu .nav-item .nav-link {
+            text-align: left;
+            padding-left: 20px;
+        }
+
+    .rtl.sidebar-icon-only .sidebar .nav.sub-menu .nav-item {
+        margin-right: auto;
+        margin-left: 0;
+    }
+
+        .rtl.sidebar-icon-only .sidebar .nav.sub-menu .nav-item .nav-link {
+            text-align: right;
+        }
+
+            .rtl.sidebar-icon-only .sidebar .nav.sub-menu .nav-item .nav-link:before {
+                left: 0;
+                right: unset;
+            }
+
+    .sidebar-icon-only .sidebar .sidebar-actions {
+        display: none;
+    }
+
+    .sidebar-icon-only .main-panel {
+        width: calc(100% - 70px);
+    }
+}
+
+@media (min-width: 992px) {
+    .sidebar-hidden .sidebar {
+        transition: width 0.25s ease;
+        -webkit-transition: width 0.25s ease;
+        -moz-transition: width 0.25s ease;
+        -ms-transition: width 0.25s ease;
+        width: 0;
+    }
+
+    .sidebar-hidden .main-panel {
+        width: 100%;
+    }
+}
+
+@media (min-width: 992px) {
+    .sidebar-absolute .page-body-wrapper {
+        position: relative;
+    }
+
+        .sidebar-absolute .page-body-wrapper .sidebar {
+            transition: none;
+        }
+
+    .sidebar-absolute:not(.sidebar-hidden) .sidebar {
+        position: absolute;
+        height: 100%;
+        -webkit-box-shadow: 0 0 3px 1px #a7a3a3;
+        /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+        -moz-box-shadow: 0 0 3px 1px #a7a3a3;
+        /* Firefox 3.5 - 3.6 */
+        box-shadow: 0 0 3px 1px #a7a3a3;
+        /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+    }
+
+    .sidebar-absolute .main-panel {
+        width: 100%;
+        transition: none;
+    }
+}
+
+@media (min-width: 992px) {
+    .sidebar-fixed .sidebar {
+        position: fixed;
+        max-height: auto;
+    }
+
+        .sidebar-fixed .sidebar .nav {
+            max-height: calc(100vh - 70px);
+            overflow: auto;
+            position: relative;
+        }
+
+            .sidebar-fixed .sidebar .nav.sub-menu {
+                max-height: none;
+            }
+
+    .sidebar-fixed .main-panel {
+        margin-left: 260px;
+    }
+
+    .sidebar-fixed.sidebar-icon-only .main-panel {
+        margin-left: 70px;
+    }
+}
+
+@media (min-width: 992px) {
+    .boxed-layout .container-scroller {
+        background: #e1d7ea;
+        padding: 0 calc((100% - 1200px) / 2);
+    }
+
+    .boxed-layout .navbar.fixed-top {
+        margin: auto;
+        max-width: 1200px;
+    }
+}
+
+.rtl {
+    direction: rtl;
+    text-align: right;
+}
+
+    .rtl .sidebar .nav {
+        padding-right: 0;
+    }
+
+.main-panel {
+    transition: width 0.25s ease, margin 0.25s ease;
+    width: calc(100% - 260px);
+    min-height: calc(100vh - 70px);
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+}
+
+@media (max-width: 991px) {
+    .main-panel {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+.content-wrapper {
+    background: #f2edf3;
+    padding: 2.75rem 2.25rem;
+    width: 100%;
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+}

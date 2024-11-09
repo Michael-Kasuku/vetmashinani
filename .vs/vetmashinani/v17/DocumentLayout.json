@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vetmashinani\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0675C79F-7032-47A7-BF9A-34B88101CC38}|vetmashinani.client\\vetmashinani.client.esproj|c:\\users\\michael kasuku\\documents\\computer science\\fourth year\\web development\\project\\vetmashinani\\vetmashinani.client\\src\\components\\landing\\faqs.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{0675C79F-7032-47A7-BF9A-34B88101CC38}|vetmashinani.client\\vetmashinani.client.esproj|solutionrelative:vetmashinani.client\\src\\components\\landing\\faqs.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0675C79F-7032-47A7-BF9A-34B88101CC38}|vetmashinani.client\\vetmashinani.client.esproj|c:\\users\\michael kasuku\\documents\\computer science\\fourth year\\web development\\project\\vetmashinani\\vetmashinani.client\\src\\components\\landing\\landingpage.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{0675C79F-7032-47A7-BF9A-34B88101CC38}|vetmashinani.client\\vetmashinani.client.esproj|solutionrelative:vetmashinani.client\\src\\components\\landing\\landingpage.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0675C79F-7032-47A7-BF9A-34B88101CC38}|vetmashinani.client\\vetmashinani.client.esproj|c:\\users\\michael kasuku\\documents\\computer science\\fourth year\\web development\\project\\vetmashinani\\vetmashinani.client\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0675C79F-7032-47A7-BF9A-34B88101CC38}|vetmashinani.client\\vetmashinani.client.esproj|solutionrelative:vetmashinani.client\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FAQs.tsx",
+              "DocumentMoniker": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vetmashinani\\vetmashinani.client\\src\\components\\Landing\\FAQs.tsx",
+              "RelativeDocumentMoniker": "vetmashinani.client\\src\\components\\Landing\\FAQs.tsx",
+              "ToolTip": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vetmashinani\\vetmashinani.client\\src\\components\\Landing\\FAQs.tsx",
+              "RelativeToolTip": "vetmashinani.client\\src\\components\\Landing\\FAQs.tsx",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACIAAABwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2024-11-08T16:22:09.06Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LandingPage.tsx",
+              "DocumentMoniker": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vetmashinani\\vetmashinani.client\\src\\components\\Landing\\LandingPage.tsx",
+              "RelativeDocumentMoniker": "vetmashinani.client\\src\\components\\Landing\\LandingPage.tsx",
+              "ToolTip": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vetmashinani\\vetmashinani.client\\src\\components\\Landing\\LandingPage.tsx",
+              "RelativeToolTip": "vetmashinani.client\\src\\components\\Landing\\LandingPage.tsx",
+              "ViewState": "AgIAABQAAAAAAAAAAAAAACMAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2024-11-08T14:04:02.398Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "index.html",
+              "DocumentMoniker": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vetmashinani\\vetmashinani.client\\index.html",
+              "RelativeDocumentMoniker": "vetmashinani.client\\index.html",
+              "ToolTip": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vetmashinani\\vetmashinani.client\\index.html",
+              "RelativeToolTip": "vetmashinani.client\\index.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-11-08T13:59:40.937Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35219.272
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "vetmashinani.Server", "vetmashinani.Server\vetmashinani.Server.csproj", "{093951F8-7748-4B17-B9FF-916E3EBA1A3D}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "vetmashinani.client", "vetmashinani.client\vetmashinani.client.esproj", "{0675C79F-7032-47A7-BF9A-34B88101CC38}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{093951F8-7748-4B17-B9FF-916E3EBA1A3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{093951F8-7748-4B17-B9FF-916E3EBA1A3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{093951F8-7748-4B17-B9FF-916E3EBA1A3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{093951F8-7748-4B17-B9FF-916E3EBA1A3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0675C79F-7032-47A7-BF9A-34B88101CC38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0675C79F-7032-47A7-BF9A-34B88101CC38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0675C79F-7032-47A7-BF9A-34B88101CC38}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{0675C79F-7032-47A7-BF9A-34B88101CC38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0675C79F-7032-47A7-BF9A-34B88101CC38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0675C79F-7032-47A7-BF9A-34B88101CC38}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B4183E04-A8E1-47EA-8012-85F55A168619}
+	EndGlobalSection
+EndGlobal
