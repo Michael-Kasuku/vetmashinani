@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Typography, Container, Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
@@ -13,7 +13,7 @@ interface FAQsState {
 }
 
 // Professional FAQs Component Implementation
-class FAQs extends Component<{}, FAQsState> {
+class FAQs extends React.Component<{}, FAQsState> {
     constructor(props: {}) {
         super(props);
         this.state = { openIndex: null };
@@ -43,9 +43,9 @@ class FAQs extends Component<{}, FAQsState> {
         return (
             <section id="faq" style={sectionStyles}>
                 <Container>
-                    <div className="faq-intro" style={introStyles}>
+                    <div className="faq-intro">
                         <Typography variant="h3" style={headingStyles}>
-                            Have Questions? We've Got Answers!
+                            Frequently Asked Questions
                         </Typography>
                         <Typography variant="body1" style={bodyTextStyles}>
                             At Vet Mashinani, we strive to make pet care simple and accessible. Below, you will find answers to some frequently asked questions.
@@ -86,11 +86,6 @@ const sectionStyles = {
     padding: '3rem 0',
     fontFamily: 'Arial, sans-serif',
     color: '#333',
-};
-
-const introStyles = {
-    textAlign: 'center',
-    marginBottom: '2rem',
 };
 
 const headingStyles = {

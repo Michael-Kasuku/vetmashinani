@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Grid, Box, Typography } from '@mui/material';
+import { Container, Box, Typography, Stack } from '@mui/material';
 import { styled } from '@mui/system';
 
 // Define types for service items
@@ -47,7 +47,7 @@ const Section = styled('section')({
     },
 });
 
-const ServiceItemBox = styled(Box)({
+const ServiceItemBox = styled(Box)(({
     backgroundColor: '#ffffff',
     padding: '1.5rem',
     border: '1px solid #dee2e6',
@@ -63,7 +63,7 @@ const ServiceItemBox = styled(Box)({
         transform: 'translateY(-5px)',
         boxShadow: '0 4px 15px rgba(0, 0, 0, 0.2)',
     },
-});
+}));
 
 const Title = styled(Typography)(({
     fontSize: '1.25rem',
@@ -83,48 +83,60 @@ const Description = styled(Typography)(({
     },
 }));
 
-const Services: React.FC = () => {
-    return (
-        <Section id="services">
-            <Container className="text-center" data-aos="fade-up" maxWidth="lg">
-                <Typography
-                    variant="h2"
-                    sx={{
-                        fontSize: { xs: '2rem', md: '2.5rem' },
-                        color: '#007bff',
-                        marginBottom: { xs: '1rem', md: '1.5rem' },
-                    }}
-                >
-                    Our Services
-                </Typography>
-                <Typography
-                    variant="body1"
-                    sx={{
-                        fontSize: { xs: '1rem', md: '1.25rem' },
-                        color: '#6c757d',
-                        marginBottom: { xs: '2rem', md: '3rem' },
-                    }}
-                >
-                    Discover our comprehensive solutions designed to enhance animal health and ensure their well-being.
-                </Typography>
-            </Container>
+// Convert functional component to class component
+class Services extends React.Component {
+    render() {
+        return (
+            <Section id="services">
+                <Container className="text-center" data-aos="fade-up" maxWidth="lg">
+                    <Typography
+                        variant="h2"
+                        sx={{
+                            fontSize: { xs: '2rem', md: '2.5rem' },
+                            color: '#0d6efd',
+                            marginBottom: { xs: '1rem', md: '1.5rem' },
+                        }}
+                    >
+                        Our Services
+                    </Typography>
+                    <Typography
+                        variant="body1"
+                        sx={{
+                            fontSize: { xs: '1rem', md: '1.25rem' },
+                            color: '#6c757d',
+                            marginBottom: { xs: '2rem', md: '3rem' },
+                        }}
+                    >
+                        Discover our comprehensive solutions designed to enhance animal health and ensure their well-being.
+                    </Typography>
+                </Container>
 
-            <Container>
-                <Grid container spacing={{ xs: 2, sm: 3, md: 4 }}>
-                    {services.map((service, index) => (
-                        <Grid item xs={12} sm={6} md={4} lg={3} key={index} data-aos="fade-up" data-aos-delay={service.delay}>
-                            <ServiceItemBox>
-                                <div>
-                                    <Title variant="h4">{service.title}</Title>
-                                    <Description variant="body1">{service.description}</Description>
-                                </div>
-                            </ServiceItemBox>
-                        </Grid>
-                    ))}
-                </Grid>
-            </Container>
-        </Section>
-    );
-};
+                <Container>
+                    <Stack
+                        direction={{ xs: 'column', sm: 'row', md: 'row' }}
+                        spacing={{ xs: 2, sm: 3, md: 4 }}
+                        justifyContent="center"
+                    >
+                        {services.map((service, index) => (
+                            <Box
+                                key={index}
+                                data-aos="fade-up"
+                                data-aos-delay={service.delay}
+                                flexBasis={{ xs: '100%', sm: '48%', md: '23%' }}
+                            >
+                                <ServiceItemBox>
+                                    <div>
+                                        <Title variant="h4">{service.title}</Title>
+                                        <Description variant="body1">{service.description}</Description>
+                                    </div>
+                                </ServiceItemBox>
+                            </Box>
+                        ))}
+                    </Stack>
+                </Container>
+            </Section>
+        );
+    }
+}
 
 export default Services;

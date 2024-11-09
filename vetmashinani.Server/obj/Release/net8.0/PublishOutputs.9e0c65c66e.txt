@@ -1,0 +1,12 @@
+C:\Users\Michael Kasuku\Documents\Computer Science\fourth year\Web Development\Project\vetmashinani\vetmashinani.Server\obj\Release\net8.0\PubTmp\Out\vetmashinani.Server.exe
+C:\Users\Michael Kasuku\Documents\Computer Science\fourth year\Web Development\Project\vetmashinani\vetmashinani.Server\obj\Release\net8.0\PubTmp\Out\appsettings.Development.json
+C:\Users\Michael Kasuku\Documents\Computer Science\fourth year\Web Development\Project\vetmashinani\vetmashinani.Server\obj\Release\net8.0\PubTmp\Out\appsettings.json
+C:\Users\Michael Kasuku\Documents\Computer Science\fourth year\Web Development\Project\vetmashinani\vetmashinani.Server\obj\Release\net8.0\PubTmp\Out\vetmashinani.Server.dll
+C:\Users\Michael Kasuku\Documents\Computer Science\fourth year\Web Development\Project\vetmashinani\vetmashinani.Server\obj\Release\net8.0\PubTmp\Out\vetmashinani.Server.deps.json
+C:\Users\Michael Kasuku\Documents\Computer Science\fourth year\Web Development\Project\vetmashinani\vetmashinani.Server\obj\Release\net8.0\PubTmp\Out\vetmashinani.Server.runtimeconfig.json
+C:\Users\Michael Kasuku\Documents\Computer Science\fourth year\Web Development\Project\vetmashinani\vetmashinani.Server\obj\Release\net8.0\PubTmp\Out\vetmashinani.Server.pdb
+C:\Users\Michael Kasuku\Documents\Computer Science\fourth year\Web Development\Project\vetmashinani\vetmashinani.Server\obj\Release\net8.0\PubTmp\Out\Microsoft.AspNetCore.SpaProxy.dll
+C:\Users\Michael Kasuku\Documents\Computer Science\fourth year\Web Development\Project\vetmashinani\vetmashinani.Server\obj\Release\net8.0\PubTmp\Out\Microsoft.OpenApi.dll
+C:\Users\Michael Kasuku\Documents\Computer Science\fourth year\Web Development\Project\vetmashinani\vetmashinani.Server\obj\Release\net8.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Michael Kasuku\Documents\Computer Science\fourth year\Web Development\Project\vetmashinani\vetmashinani.Server\obj\Release\net8.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Michael Kasuku\Documents\Computer Science\fourth year\Web Development\Project\vetmashinani\vetmashinani.Server\obj\Release\net8.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll

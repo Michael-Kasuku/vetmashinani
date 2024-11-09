@@ -1,0 +1,21 @@
+{
+  "name": "Vet Mashinani",
+  "short_name": "VMashinani",
+  "description": "Bridging the Gap in Veterinary Services",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4CAF50",
+  "icons": [
+    {
+      "src": "/assets/img/vetmashinani.ico",
+      "sizes": "192x192",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/assets/img/vetmashinani.ico",
+      "sizes": "512x512",
+      "type": "image/x-icon"
+    }
+  ]
+}
