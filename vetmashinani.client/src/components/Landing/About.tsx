@@ -34,7 +34,7 @@ class About extends React.Component {
                         </Box>
 
                         <Box sx={{ flex: 1 }}>
-                            <Box sx={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', gap: 3 }}>
+                            <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, flexWrap: 'wrap', gap: 3 }}>
                                 <Box sx={{ flex: 1, minWidth: '45%' }} data-aos="fade-up" data-aos-delay="200">
                                     <InfoBox>
                                         <Typography variant="h4" color="white">

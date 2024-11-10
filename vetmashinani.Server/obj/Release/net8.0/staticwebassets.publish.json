@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "bqYCzIvtZbt06XYCRF/O6uk1+NKJbIREvjLHv93vHSM=",
+  "Hash": "R9YbdPodCGtp9QrHOWHslbzTIMbuOBuU5Sdb2lZYFFw=",
   "Source": "vetmashinani.Server",
   "BasePath": "_content/vetmashinani.Server",
   "Mode": "Default",
@@ -401,6 +401,25 @@
       "OriginalItemSpec": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vetmashinani\\vetmashinani.client\\dist\\assets\\img\\vetmashinani.png"
     },
     {
+      "Identity": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vetmashinani\\vetmashinani.client\\dist\\assets\\index-BECCZ1v3.js",
+      "SourceId": "vetmashinani.client",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vetmashinani\\vetmashinani.client\\dist\\",
+      "BasePath": "/",
+      "RelativePath": "assets/index-BECCZ1v3.js",
+      "AssetKind": "Publish",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vetmashinani\\vetmashinani.client\\dist\\assets\\index-BECCZ1v3.js"
+    },
+    {
       "Identity": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vetmashinani\\vetmashinani.client\\dist\\assets\\index-BmeudMjs.css",
       "SourceId": "vetmashinani.client",
       "SourceType": "Discovered",
@@ -420,12 +439,12 @@
       "OriginalItemSpec": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vetmashinani\\vetmashinani.client\\dist\\assets\\index-BmeudMjs.css"
     },
     {
-      "Identity": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vetmashinani\\vetmashinani.client\\dist\\assets\\index-D4R9rTcW.js",
+      "Identity": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vetmashinani\\vetmashinani.client\\dist\\assets\\js\\main.js",
       "SourceId": "vetmashinani.client",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vetmashinani\\vetmashinani.client\\dist\\",
       "BasePath": "/",
-      "RelativePath": "assets/index-D4R9rTcW.js",
+      "RelativePath": "assets/js/main.js",
       "AssetKind": "Publish",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -436,26 +455,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vetmashinani\\vetmashinani.client\\dist\\assets\\index-D4R9rTcW.js"
-    },
-    {
-      "Identity": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vetmashinani\\vetmashinani.client\\dist\\assets\\js\\main.ts",
-      "SourceId": "vetmashinani.client",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vetmashinani\\vetmashinani.client\\dist\\",
-      "BasePath": "/",
-      "RelativePath": "assets/js/main.ts",
-      "AssetKind": "Publish",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vetmashinani\\vetmashinani.client\\dist\\assets\\js\\main.ts"
+      "OriginalItemSpec": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vetmashinani\\vetmashinani.client\\dist\\assets\\js\\main.js"
     },
     {
       "Identity": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vetmashinani\\vetmashinani.client\\dist\\assets\\pwa\\manifest.json",
@@ -477,12 +477,12 @@
       "OriginalItemSpec": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vetmashinani\\vetmashinani.client\\dist\\assets\\pwa\\manifest.json"
     },
     {
-      "Identity": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vetmashinani\\vetmashinani.client\\dist\\assets\\pwa\\service-worker.ts",
+      "Identity": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vetmashinani\\vetmashinani.client\\dist\\assets\\pwa\\service-worker.js",
       "SourceId": "vetmashinani.client",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vetmashinani\\vetmashinani.client\\dist\\",
       "BasePath": "/",
-      "RelativePath": "assets/pwa/service-worker.ts",
+      "RelativePath": "assets/pwa/service-worker.js",
       "AssetKind": "Publish",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -493,7 +493,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vetmashinani\\vetmashinani.client\\dist\\assets\\pwa\\service-worker.ts"
+      "OriginalItemSpec": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vetmashinani\\vetmashinani.client\\dist\\assets\\pwa\\service-worker.js"
     },
     {
       "Identity": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vetmashinani\\vetmashinani.client\\dist\\index.html",

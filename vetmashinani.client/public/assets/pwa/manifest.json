@@ -17,5 +17,14 @@
       "sizes": "512x512",
       "type": "image/x-icon"
     }
-  ]
+  ],
+  "lang": "en",
+  "dir": "ltr",
+  "orientation": "any",
+  "prefer_related_applications": false,
+  "related_applications": [],
+  "scope": "/",
+  "serviceworker": "/assets/pwa/service-worker.js",
+  "categories": [ "Veterinary", "Health", "Animals" ],
+  "iarc_rating_id": "18+"
 }

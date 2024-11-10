@@ -1,12 +1,14 @@
 (function () {
     "use strict";
 
+    // Existing functionality...
+
     /**
      * Mobile navigation toggle.
      */
-    const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle') as HTMLElement | null;
+    const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
 
-    function toggleMobileNav(): void {
+    function toggleMobileNav() {
         try {
             document.body.classList.toggle('mobile-nav-active');
             if (mobileNavToggleBtn) {
@@ -25,7 +27,7 @@
     /**
      * Hide mobile nav on same-page/hash links.
      */
-    document.querySelectorAll<HTMLAnchorElement>('#navmenu a').forEach(navItem => {
+    document.querySelectorAll('#navmenu a').forEach(navItem => {
         navItem.addEventListener('click', () => {
             if (document.body.classList.contains('mobile-nav-active')) {
                 toggleMobileNav();
@@ -36,13 +38,13 @@
     /**
      * Toggle mobile nav dropdowns.
      */
-    document.querySelectorAll<HTMLElement>('.navmenu .toggle-dropdown').forEach(dropdownToggle => {
+    document.querySelectorAll('.navmenu .toggle-dropdown').forEach(dropdownToggle => {
         dropdownToggle.addEventListener('click', function (e) {
             e.preventDefault();
             try {
-                const parentItem = this.parentNode as HTMLElement;
+                const parentItem = this.parentNode;
                 parentItem.classList.toggle('active');
-                const sibling = parentItem.nextElementSibling as HTMLElement | null;
+                const sibling = parentItem.nextElementSibling;
                 if (sibling) {
                     sibling.classList.toggle('dropdown-active');
                 }
@@ -70,9 +72,9 @@
     /**
      * Scroll to top button functionality.
      */
-    const scrollTopBtn = document.querySelector('.scroll-top') as HTMLElement | null;
+    const scrollTopBtn = document.querySelector('.scroll-top');
 
-    function toggleScrollTopButton(): void {
+    function toggleScrollTopButton() {
         try {
             if (scrollTopBtn) {
                 scrollTopBtn.classList.toggle('active', window.scrollY > 100);
@@ -95,7 +97,7 @@
     /**
      * Smooth scroll for navigation links.
      */
-    document.querySelectorAll<HTMLAnchorElement>('a.scroll-link').forEach(link => {
+    document.querySelectorAll('a.scroll-link').forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             try {
@@ -116,7 +118,7 @@
     /**
      * Tooltip functionality.
      */
-    document.querySelectorAll<HTMLElement>('[data-tooltip]').forEach(element => {
+    document.querySelectorAll('[data-tooltip]').forEach(element => {
         element.addEventListener('mouseenter', function () {
             try {
                 const tooltipText = this.getAttribute('data-tooltip') || '';
@@ -129,7 +131,7 @@
                 tooltip.style.top = `${rect.top + window.scrollY - tooltip.offsetHeight}px`;
                 tooltip.style.left = `${rect.left + (this.offsetWidth / 2) - (tooltip.offsetWidth / 2)}px`;
 
-                (this as any)._tooltip = tooltip; // Store tooltip reference for removal later
+                this._tooltip = tooltip; // Store tooltip reference for removal later
             } catch (error) {
                 console.error('Error in tooltip mouseenter:', error);
             }
@@ -137,14 +139,27 @@
 
         element.addEventListener('mouseleave', function () {
             try {
-                const tooltip = (this as any)._tooltip as HTMLElement;
+                const tooltip = this._tooltip;
                 if (tooltip) {
                     tooltip.remove();
-                    delete (this as any)._tooltip; // Remove reference
+                    delete this._tooltip; // Remove reference
                 }
             } catch (error) {
                 console.error('Error in tooltip mouseleave:', error);
             }
         });
     });
+
+    // Register the service worker
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/assets/pwa/service-worker.js')
+                .then((registration) => {
+                    console.log('Service Worker registered with scope:', registration.scope);
+                })
+                .catch((error) => {
+                    console.error('Service Worker registration failed:', error);
+                });
+        });
+    }
 })();

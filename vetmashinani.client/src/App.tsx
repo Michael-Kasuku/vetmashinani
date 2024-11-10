@@ -20,17 +20,3 @@ root.render(
         </BrowserRouter>
     </React.StrictMode>
 );
-
-// Register the service worker
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker
-            .register('/assets/pwa/service-worker.js') // Make sure the file is in the public folder
-            .then((registration) => {
-                console.log('Service Worker registered with scope:', registration.scope);
-            })
-            .catch((error) => {
-                console.log('Service Worker registration failed:', error);
-            });
-    });
-}

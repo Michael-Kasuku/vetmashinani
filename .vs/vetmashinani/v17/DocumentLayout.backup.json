@@ -1,24 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vetmashinani\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{0675C79F-7032-47A7-BF9A-34B88101CC38}|vetmashinani.client\\vetmashinani.client.esproj|c:\\users\\michael kasuku\\documents\\computer science\\fourth year\\web development\\project\\vetmashinani\\vetmashinani.client\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0675C79F-7032-47A7-BF9A-34B88101CC38}|vetmashinani.client\\vetmashinani.client.esproj|solutionrelative:vetmashinani.client\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0675C79F-7032-47A7-BF9A-34B88101CC38}|vetmashinani.client\\vetmashinani.client.esproj|c:\\users\\michael kasuku\\documents\\computer science\\fourth year\\web development\\project\\vetmashinani\\vetmashinani.client\\src\\app.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{0675C79F-7032-47A7-BF9A-34B88101CC38}|vetmashinani.client\\vetmashinani.client.esproj|solutionrelative:vetmashinani.client\\src\\app.tsx||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0675C79F-7032-47A7-BF9A-34B88101CC38}|vetmashinani.client\\vetmashinani.client.esproj|c:\\users\\michael kasuku\\documents\\computer science\\fourth year\\web development\\project\\vetmashinani\\vetmashinani.client\\public\\assets\\pwa\\manifest.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{0675C79F-7032-47A7-BF9A-34B88101CC38}|vetmashinani.client\\vetmashinani.client.esproj|solutionrelative:vetmashinani.client\\public\\assets\\pwa\\manifest.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0675C79F-7032-47A7-BF9A-34B88101CC38}|vetmashinani.client\\vetmashinani.client.esproj|c:\\users\\michael kasuku\\documents\\computer science\\fourth year\\web development\\project\\vetmashinani\\vetmashinani.client\\public\\assets\\pwa\\service-worker.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{0675C79F-7032-47A7-BF9A-34B88101CC38}|vetmashinani.client\\vetmashinani.client.esproj|solutionrelative:vetmashinani.client\\public\\assets\\pwa\\service-worker.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -26,63 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "index.html",
-              "DocumentMoniker": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vetmashinani\\vetmashinani.client\\index.html",
-              "RelativeDocumentMoniker": "vetmashinani.client\\index.html",
-              "ToolTip": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vetmashinani\\vetmashinani.client\\index.html",
-              "RelativeToolTip": "vetmashinani.client\\index.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-11-09T17:31:32.842Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "App.tsx",
-              "DocumentMoniker": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vetmashinani\\vetmashinani.client\\src\\App.tsx",
-              "RelativeDocumentMoniker": "vetmashinani.client\\src\\App.tsx",
-              "ToolTip": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vetmashinani\\vetmashinani.client\\src\\App.tsx",
-              "RelativeToolTip": "vetmashinani.client\\src\\App.tsx",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAACIAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-11-09T17:31:26.289Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "manifest.json",
-              "DocumentMoniker": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vetmashinani\\vetmashinani.client\\public\\assets\\pwa\\manifest.json",
-              "RelativeDocumentMoniker": "vetmashinani.client\\public\\assets\\pwa\\manifest.json",
-              "ToolTip": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vetmashinani\\vetmashinani.client\\public\\assets\\pwa\\manifest.json",
-              "RelativeToolTip": "vetmashinani.client\\public\\assets\\pwa\\manifest.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-11-09T17:31:11.835Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "service-worker.ts",
-              "DocumentMoniker": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vetmashinani\\vetmashinani.client\\public\\assets\\pwa\\service-worker.ts",
-              "RelativeDocumentMoniker": "vetmashinani.client\\public\\assets\\pwa\\service-worker.ts",
-              "ToolTip": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vetmashinani\\vetmashinani.client\\public\\assets\\pwa\\service-worker.ts",
-              "RelativeToolTip": "vetmashinani.client\\public\\assets\\pwa\\service-worker.ts",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-11-09T17:30:40.374Z",
-              "EditorCaption": ""
             }
           ]
         }
