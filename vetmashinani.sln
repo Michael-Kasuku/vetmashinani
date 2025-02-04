@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35219.272
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "vetmashinani.Server", "vetmashinani.Server\vetmashinani.Server.csproj", "{649E743E-549B-4CF2-B6D2-77110EE9DB08}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "vetmashinani.client", "vetmashinani.client\vetmashinani.client.esproj", "{068759FD-1053-4FBD-8763-389400260EFC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{649E743E-549B-4CF2-B6D2-77110EE9DB08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{649E743E-549B-4CF2-B6D2-77110EE9DB08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{649E743E-549B-4CF2-B6D2-77110EE9DB08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{649E743E-549B-4CF2-B6D2-77110EE9DB08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{068759FD-1053-4FBD-8763-389400260EFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{068759FD-1053-4FBD-8763-389400260EFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{068759FD-1053-4FBD-8763-389400260EFC}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{068759FD-1053-4FBD-8763-389400260EFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{068759FD-1053-4FBD-8763-389400260EFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{068759FD-1053-4FBD-8763-389400260EFC}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3FF5F465-957D-45F6-A316-2062EDBB40BE}
+	EndGlobalSection
+EndGlobal

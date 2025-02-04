@@ -1,0 +1,6 @@
+@vetmashinani.Server_HostAddress = http://localhost:5127
+
+GET {{vetmashinani.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
