@@ -1,0 +1,25 @@
+<section id="add-device" class="device-section">
+  <div class="container-lg device-content">
+    <div class="device-form">
+      <h2>Create New Appointment</h2>
+      <p>Fill in the details to add a new appointment</p>
+
+      <!-- Progress Bar -->
+      <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+
+      <form (ngSubmit)="handleSubmit($event)">
+        <div class="form-row">
+          <mat-form-field appearance="outline" class="form-group">
+            <mat-label>Description</mat-label>
+            <input matInput type="text" name="Description" [(ngModel)]="formData.Description" placeholder="Describe what the appointment is all about" required />
+          </mat-form-field>
+        </div>
+
+        <div class="form-row button-row">
+          <button mat-raised-button type="button" class="btn btn-cancel" (click)="onCancel()">Cancel</button>
+          <button mat-raised-button color="primary" type="submit" class="btn-register">Create</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
