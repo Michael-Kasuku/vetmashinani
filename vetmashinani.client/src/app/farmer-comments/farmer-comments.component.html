@@ -1,1 +1,30 @@
-<p>farmer-comments works!</p>
+<div class="container py-4 chat-container">
+  <div class="chat-header d-flex justify-content-between align-items-center mb-3">
+    <div class="vet-info d-flex align-items-center">
+      <h5 class="ms-3">{{ selectedAppointment.description }}</h5>
+    </div>
+  </div>
+
+  <div class="chat-body">
+    <div *ngFor="let date of objectKeys(comments)">
+      <h6 class="date-header">{{ date }}</h6>
+      <div *ngFor="let comment of comments[date]"
+           [ngClass]="{'user-message': comment.sender === currentUserEmail, 'vet-message': comment.sender !== currentUserEmail}">
+        <div class="message-content">
+          <p>{{ comment.content }}</p>
+          <small>{{ comment.timestamp | date: 'shortTime' }}</small>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+    <div class="chat-footer mt-3">
+      <form (ngSubmit)="sendComment($event)">
+        <div class="input-group">
+          <input type="text" class="form-control" [(ngModel)]="formData.newComment" placeholder="Type your comment...">
+          <button mat-raised-button color="primary" type="submit">Send</button>
+        </div>
+      </form>
+    </div>
+</div>

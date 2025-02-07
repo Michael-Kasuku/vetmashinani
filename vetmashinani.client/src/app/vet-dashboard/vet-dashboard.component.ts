@@ -42,7 +42,7 @@ export class VetDashboardComponent implements OnInit, OnDestroy {
   }
 
   goToProfile(): void {
-    this.router.navigate(['/vet/my/profile']);
+    this.router.navigate(['/vet/myprofile']);
   }
 
   private loadProfileImage(email: string): void {

@@ -1,1 +1,36 @@
-<p>farmer-my-profile works!</p>
+<div class="my-profile">
+  <h2>Update Profile Picture</h2>
+  <form [formGroup]="profileForm" (ngSubmit)="onUpdateProfile()" novalidate>
+    <!-- Profile Picture -->
+    <div class="form-group">
+      <label for="profilePicture">Profile Picture</label>
+      <input type="file" id="profilePicture" class="form-control" (change)="onFileSelected($event)" />
+      <div class="preview" *ngIf="profilePicturePreview">
+        <p>Preview:</p>
+        <img [src]="profilePicturePreview" alt="Profile Preview" />
+      </div>
+      <small *ngIf="profileForm.get('profilePicture')?.touched && profileForm.get('profilePicture')?.invalid" class="text-danger">
+        Profile picture is required.
+      </small>
+    </div>
+
+    <!-- Progress Bar -->
+    <div *ngIf="isUpdating" class="progress-container">
+      <div class="progress">
+        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 100%">
+          Updating...
+        </div>
+      </div>
+    </div>
+
+    <!-- Button Section -->
+    <div class="button-group">
+      <button mat-raised-button type="button" class="btn btn-cancel" (click)="onCancel()">
+        Cancel
+      </button>
+      <button mat-raised-button type="submit" class="btn btn-primary" [disabled]="profileForm.invalid || isUpdating">
+        Update
+      </button>
+    </div>
+  </form>
+</div>

@@ -11,8 +11,8 @@ export interface Appointment {
   description: string;
   host: string;
   guest: string;
-  dateAdded: string;
   status: string;
+  dateAdded: string;
 }
 @Component({
   selector: 'app-vet-appointments',
@@ -36,7 +36,7 @@ export class VetAppointmentsComponent implements OnInit, AfterViewInit {
   }
 
   fetchAppointments(): void {
-    const url = `https://localhost:40443/api/vet/getappointments?Email=${this.email}`;
+    const url = `https://localhost:40443/api/account/getappointments?Email=${this.email}`;
     this.http.get<Appointment[]>(url).subscribe({
       next: (data) => {
         this.dataSource.data = data;
@@ -68,23 +68,58 @@ export class VetAppointmentsComponent implements OnInit, AfterViewInit {
 
   addAppointment(): void {
     // Navigate to the add appointment page
-    this.router.navigate(['/vet/add/appointment']);
+    this.router.navigate(['/vet/addappointment']);
   }
 
   comment(appointment: Appointment): void {
-    localStorage.setItem('id', appointment.id.toString());
+    // Store the Appointment in local storage
+    localStorage.setItem('appointment', JSON.stringify(appointment));
     this.router.navigate([`/vet/comments`]);
   }
 
   approve(appointment: Appointment): void {
     if (confirm(`Are you sure you want to approve ${appointment.description}?`)) {
-      //Change the status to "Approved"
+      const url = `https://localhost:40443/api/account/approveappointment`;
+
+      this.http.put(url, {
+        Id: appointment.id,
+        Host: appointment.guest,
+        Status: 'Approved'
+      }).subscribe(
+        () => {
+          this.openSnackbar('Appointment approved successfully!', 'success');
+          // Reload the current page to reflect changes
+          window.location.reload();
+
+        },
+        (error) => {
+          const errorMessage = error.error?.message || 'Error in approving the appointment. Please try again.';
+          this.openSnackbar(errorMessage, 'error');
+        }
+      );
     }
   }
 
   cancel(appointment: Appointment): void {
     if (confirm(`Are you sure you want to cancel ${appointment.description}?`)) {
-      //Change the status to "Cancelled"
+      const url = `https://localhost:40443/api/account/cancelappointment`;
+
+      this.http.put(url, {
+        Id: appointment.id,
+        Host: appointment.host,
+        Status: 'Cancelled'
+      }).subscribe(
+        () => {
+          this.openSnackbar('Appointment cancelled successfully!', 'success');
+          // Reload the current page to reflect changes
+          window.location.reload();
+
+        },
+        (error) => {
+          const errorMessage = error.error?.message || 'Error in cancelling the appointment. Please try again.';
+          this.openSnackbar(errorMessage, 'error');
+        }
+      );
     }
   }
 

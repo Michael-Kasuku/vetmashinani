@@ -7,6 +7,7 @@
     <SpaRoot>..\vetmashinani.client</SpaRoot>
     <SpaProxyLaunchCommand>npm start</SpaProxyLaunchCommand>
     <SpaProxyServerUrl>https://localhost:4200</SpaProxyServerUrl>
+    <UserSecretsId>6575c1de-ec99-4234-8423-7852bf0b7083</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
