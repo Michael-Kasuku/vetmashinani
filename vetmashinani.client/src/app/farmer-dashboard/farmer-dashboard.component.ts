@@ -16,7 +16,7 @@ export class FarmerDashboardComponent implements OnInit, OnDestroy {
   private destroySubject = new Subject();
   isLoggedIn: boolean = false;
   activeTab: number = 0;  // Default to the first tab
-  profileImage: string = '/img/vmashinani.png';  // Default profile image
+  profileImage: string = '/img/vetmashinani.png';  // Default profile image
   private email: string | null = localStorage.getItem('email');
 
   constructor(private authService: FarmerAuthService,
@@ -46,7 +46,7 @@ export class FarmerDashboardComponent implements OnInit, OnDestroy {
   }
 
   private loadProfileImage(email: string): void {
-    const url = `http://localhost:40443/api/account/getprofileimage?Email=${email}`;
+    const url = `https://localhost:40443/api/account/getprofileimage?Email=${email}`;
     this.http.get(url, { responseType: 'blob' }).subscribe(
       (response) => {
         const reader = new FileReader();
@@ -69,7 +69,7 @@ export class FarmerDashboardComponent implements OnInit, OnDestroy {
         } else {
           this.openSnackbar(errorMessage, 'error');
         }
-        this.profileImage = '/img/vmashinani.png'; // Fallback to default image
+        this.profileImage = '/img/vetmashinani.png'; // Fallback to default image
       }
     );
   }

@@ -91,7 +91,7 @@ namespace vetmashinani.Server.Controllers
         [HttpGet]
         public async Task<IActionResult> getFarmers()
         {
-            string roleFarmer = "Farmers";
+            string roleFarmer = "Farmer";
 
             var users = await _context.ApplicationUsers.ToListAsync();
 

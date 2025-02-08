@@ -31,7 +31,7 @@ export class FarmerForgotPasswordComponent {
     }
 
     // HTTP Request for Password Reset
-    this.http.post('http://localhost:40443/api/farmer/forgotpassword', {
+    this.http.post('https://localhost:40443/api/farmer/forgotpassword', {
       Email: this.formData.Email
     })
       .subscribe(

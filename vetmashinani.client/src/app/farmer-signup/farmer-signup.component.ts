@@ -58,7 +58,7 @@ export class FarmerSignupComponent {
       this.openSnackbar('Passwords do not match.', 'error');
       return;
     }
-    const url = `http://localhost:40443/api/farmer/createfarmer`
+    const url = `https://localhost:40443/api/farmer/createfarmer`
     // HTTP Request
     this.http.post(url,
       {

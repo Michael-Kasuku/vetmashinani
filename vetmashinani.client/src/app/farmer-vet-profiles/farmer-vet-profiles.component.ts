@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { DomSanitizer } from '@angular/platform-browser';
 
 export interface VetProfile {
   id: number;
@@ -13,27 +12,24 @@ export interface VetProfile {
   profilePicture: {
     fileContents: string;
     contentType: string;
-  } | null; // Can be null if no picture is provided
+  } | null;
 }
 
 @Component({
   selector: 'app-farmer-vet-profiles',
   standalone: false,
-  
   templateUrl: './farmer-vet-profiles.component.html',
   styleUrl: './farmer-vet-profiles.component.scss'
 })
-export class FarmerVetProfilesComponent {
+export class FarmerVetProfilesComponent implements OnInit {
   vetProfiles: VetProfile[] = [];
   filteredProfiles: VetProfile[] = [];
-  profileImage: string = '/img/vmashinani.png'; // Default profile image
   searchQuery: string = '';
 
   constructor(
     private http: HttpClient,
     private snackBar: MatSnackBar,
-    private router: Router,
-    private sanitizer: DomSanitizer // Inject DomSanitizer to sanitize the URL
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -41,7 +37,7 @@ export class FarmerVetProfilesComponent {
   }
 
   fetchVets(): void {
-    const url = `http://localhost:40443/api/account/getvets`;
+    const url = `https://localhost:40443/api/account/getvets`;
     this.http.get<VetProfile[]>(url, { responseType: 'json' }).subscribe({
       next: (data) => {
         this.vetProfiles = data;
@@ -63,22 +59,12 @@ export class FarmerVetProfilesComponent {
   }
 
   getProfileImageUrl(vet: VetProfile): string {
-    if (vet.profilePicture && vet.profilePicture.fileContents) {
-      return `data:${vet.profilePicture.contentType};base64,${vet.profilePicture.fileContents}`;
-    } else {
-      return this.profileImage; // Default profile image
-    }
-  }
-
-  onSearch(): void {
-    this.filteredProfiles = this.vetProfiles.filter(vet =>
-      vet.name.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
-      vet.location.toLowerCase().includes(this.searchQuery.toLowerCase())
-    );
+    return vet.profilePicture?.fileContents
+      ? `data:${vet.profilePicture.contentType};base64,${vet.profilePicture.fileContents}`
+      : '/img/vetmashinani.png';
   }
 
   appointments(vet: VetProfile): void {
-    // Store the Vet profile in local storage
     localStorage.setItem('vet', JSON.stringify(vet));
     this.router.navigate(['/farmer/appointments']);
   }

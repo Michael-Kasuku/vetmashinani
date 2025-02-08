@@ -9,34 +9,18 @@
   </div>
 
   <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8 custom-table">
-    <!-- ID Column -->
-    <ng-container matColumnDef="id">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
-      <td mat-cell *matCellDef="let appointment" data-label="ID"> {{appointment.id}} </td>
-    </ng-container>
-
-    <!-- Description Column -->
     <ng-container matColumnDef="description">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Description </th>
-      <td mat-cell *matCellDef="let appointment" data-label="Description"> {{appointment.description}} </td>
-    </ng-container>
-
-    <!-- Host Column -->
-    <ng-container matColumnDef="host">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Host </th>
-      <td mat-cell *matCellDef="let appointment" data-label="Host"> {{appointment.host}} </td>
-    </ng-container>
-
-    <!-- Guest -->
-    <ng-container matColumnDef="guest">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Guest </th>
-      <td mat-cell *matCellDef="let appointment" data-label="Guest"> {{appointment.guest}} </td>
+      <td mat-cell *matCellDef="let appointment" data-label="Description" class="tooltip">
+        {{appointment.description}}
+        <span class="tooltip-text">{{appointment.description}}</span>
+      </td>
     </ng-container>
 
     <!-- Date Added Column -->
     <ng-container matColumnDef="dateAdded">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Date Added </th>
-      <td mat-cell *matCellDef="let device" data-label="Date Added"> {{device.dateAdded}} </td>
+      <td mat-cell *matCellDef="let appointment" data-label="Date Added"> {{appointment.dateAdded}} </td>
     </ng-container>
 
     <!-- Status Column -->
@@ -48,7 +32,7 @@
     <!-- Actions Column -->
     <ng-container matColumnDef="actions">
       <th mat-header-cell *matHeaderCellDef> Actions </th>
-      <td mat-cell *matCellDef="let device">
+      <td mat-cell *matCellDef="let appointment">
         <button mat-raised-button class="comment-button" (click)="comment(appointment)">Comment</button>
         <button mat-raised-button class="approve-button" (click)="approve(appointment)">Approve</button>
         <button mat-raised-button class="cancel-button" (click)="cancel(appointment)">Cancel</button>

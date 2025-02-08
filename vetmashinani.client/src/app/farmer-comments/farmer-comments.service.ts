@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class FarmerCommentService {
-  private apiUrl = `http://localhost:40443/api/farmer/getcomments`; // Replace with your API endpoint
+  private apiUrl = `https://localhost:40443/api/farmer/getcomments`; // Replace with your API endpoint
 
   constructor(private http: HttpClient) { }
 

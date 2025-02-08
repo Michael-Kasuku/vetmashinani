@@ -1,110 +1,103 @@
-/* General Styles */
 .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
   max-width: 1200px;
-  margin: auto;
 }
 
-/* Search and Sort Styles */
-.search-input {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 12px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+.profile-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.sort-dropdown {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 12px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+.profile-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Profile Image */
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .profile-img {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  border: 3px solid #fff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+  border: 3px solid #4CAF50;
+  margin-bottom: 10px;
 }
 
-/* Row Styling */
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-/* Card Styling */
-.mat-card {
-  flex: 1 1 calc(33.333% - 1.5rem);
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.mat-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-/* Card Header */
-.mat-card-header {
-  padding: 20px;
-  text-align: center;
-  background-color: #f9f9f9;
-  border-bottom: 1px solid #eee;
-}
-
-.mat-card-title {
+h2 {
   font-size: 1.2rem;
-  font-weight: bold;
+  font-weight: 600;
+  margin: 0;
   color: #333;
-  margin: 8px 0;
 }
 
-.mat-card-subtitle {
+.job-title {
   font-size: 1rem;
   color: #777;
+  margin: 5px 0;
 }
 
-/* Card Content */
-.mat-card-content {
-  padding: 16px;
-  font-size: 1rem;
+.location {
+  font-size: 0.9rem;
   color: #555;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
-/* Button Styling */
+.location i {
+  color: #d32f2f;
+}
+
+.profile-actions {
+  margin-top: 1rem;
+}
+
 .btn-book {
-  background-color: #007bff;
+  background: #4CAF50;
   color: #fff;
-  font-weight: 600;
-  padding: 10px 20px;
-  border-radius: 25px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  transition: background 0.3s ease;
 }
 
 .btn-book:hover {
-  background-color: #0056b3;
-  color: #fff;
+  background: #388E3C;
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .mat-card {
-    flex: 1 1 calc(50% - 1.5rem);
-  }
-}
-
+/* Mobile-friendly adjustments */
 @media (max-width: 768px) {
-  .mat-card {
-    flex: 1 1 calc(100% - 1.5rem);
+  .container {
+    padding: 1rem;
+  }
+
+  .profile-grid {
+    grid-template-columns: 1fr; /* Single column layout on smaller screens */
+    gap: 1rem;
+  }
+
+  .profile-card {
+    padding: 1rem;
   }
 
   .profile-img {
@@ -112,23 +105,52 @@
     height: 70px;
   }
 
-  .mat-card-title {
+  h2 {
     font-size: 1.1rem;
   }
 
-  .mat-card-subtitle {
+  .job-title {
     font-size: 0.9rem;
+  }
+
+  .location {
+    font-size: 0.8rem;
+  }
+
+  .btn-book {
+    padding: 6px 12px;
+    font-size: 0.85rem;
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 480px) {
+  .container {
+    padding: 0.5rem;
+  }
+
+  .profile-card {
+    padding: 0.8rem;
+  }
+
   .profile-img {
     width: 60px;
     height: 60px;
   }
 
+  h2 {
+    font-size: 1rem;
+  }
+
+  .job-title {
+    font-size: 0.85rem;
+  }
+
+  .location {
+    font-size: 0.75rem;
+  }
+
   .btn-book {
-    padding: 8px 16px;
-    font-size: 0.9rem;
+    padding: 5px 10px;
+    font-size: 0.8rem;
   }
 }

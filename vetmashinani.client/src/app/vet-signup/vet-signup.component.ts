@@ -58,7 +58,7 @@ export class VetSignupComponent {
       this.openSnackbar('Passwords do not match.', 'error');
       return;
     }
-    const url = `http://localhost:40443/api/vet/createvet`
+    const url = `https://localhost:40443/api/vet/createvet`
     // HTTP Request
     this.http.post(url,
       {

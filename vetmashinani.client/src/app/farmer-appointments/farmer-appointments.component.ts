@@ -24,7 +24,7 @@ export interface Appointment {
 })
 export class FarmerAppointmentsComponent {
   private email: string | null = localStorage.getItem('email');
-  displayedColumns: string[] = ['id', 'description', 'host', 'guest', 'dateAdded', 'status', 'actions'];
+  displayedColumns: string[] = ['description', 'dateAdded', 'status', 'actions'];
   dataSource = new MatTableDataSource<Appointment>([]);
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -40,12 +40,28 @@ export class FarmerAppointmentsComponent {
     const url = `https://localhost:40443/api/account/getappointments?Email=${this.email}`;
     this.http.get<Appointment[]>(url).subscribe({
       next: (data) => {
-        this.dataSource.data = data;
+        this.dataSource.data = data.map(appointment => ({
+          ...appointment,
+          dateAdded: this.convertToEAT(appointment.dateAdded) // Convert to EAT
+        }));
       },
       error: (err) => {
         this.openSnackbar('Failed to Fetch Appointments!', 'error');
       }
     });
+  }
+
+  convertToEAT(dateString: string): string {
+    const date = new Date(dateString);
+    return new Intl.DateTimeFormat('en-KE', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      timeZone: 'Africa/Nairobi' // East African Time
+    }).format(date);
   }
 
   ngAfterViewInit(): void {

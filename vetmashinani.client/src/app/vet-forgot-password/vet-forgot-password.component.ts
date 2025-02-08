@@ -31,7 +31,7 @@ export class VetForgotPasswordComponent {
     }
 
     // HTTP Request for Password Reset
-    this.http.post('http://localhost:40443/api/vet/forgotpassword', {
+    this.http.post('https://localhost:40443/api/vet/forgotpassword', {
       Email: this.formData.Email
     })
       .subscribe(

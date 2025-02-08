@@ -48,7 +48,7 @@ export class FarmerAddAppointmentComponent implements OnInit, OnDestroy {
     const url = `https://localhost:40443/api/account/addappointment`;
     this.http
       .post(url, {
-        Content: this.formData.Description,
+        Description: this.formData.Description,
         Host: this.email,
         Guest: this.selectedVet.email,
         Status: 'Pending'
@@ -58,7 +58,7 @@ export class FarmerAddAppointmentComponent implements OnInit, OnDestroy {
           // Hide progress bar
           this.loading = false;
           this.openSnackbar('Appointment added successfully!', 'success');
-          this.router.navigate(['/farmer/dashboard']);
+          this.router.navigate(['/farmer/appointments']);
         },
         () => {
           // Hide progress bar and show error
