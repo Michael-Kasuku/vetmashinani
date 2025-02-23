@@ -197,14 +197,14 @@ namespace vetmashinani.Server.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetComments(int appointmentId,string senderEmail, string receiverEmail)
+        public async Task<IActionResult> GetComments(string appointmentId,string senderEmail, string receiverEmail)
         {
             try
             {
                 var comments = await _context.Comments
                     .Where(comment =>
-                        (comment.Id==appointmentId&&comment.Sender == senderEmail && comment.Receiver == receiverEmail) ||
-                        (comment.Id == appointmentId && comment.Sender == receiverEmail && comment.Receiver == senderEmail))
+                        (comment.AppointmentId==appointmentId&&comment.Sender == senderEmail && comment.Receiver == receiverEmail) ||
+                        (comment.AppointmentId == appointmentId && comment.Sender == receiverEmail && comment.Receiver == senderEmail))
                     .OrderBy(comment => comment.SentAt)
                     .ToListAsync();
 
@@ -212,7 +212,7 @@ namespace vetmashinani.Server.Controllers
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error retrieving chats: {ex.Message}");
+                Console.WriteLine($"Error retrieving comments: {ex.Message}");
                 return StatusCode(500, "Internal server error.");
             }
         }

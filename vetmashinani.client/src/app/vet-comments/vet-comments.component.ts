@@ -3,8 +3,19 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { VetCommentService } from './vet-comments.service';
 import { Appointment } from '../vet-appointments/vet-appointments.component';
-import { FarmerProfile } from '../vet-farmer-profiles/vet-farmer-profiles.component';
 import { HttpClient } from '@angular/common/http';
+
+export interface FarmerProfile {
+  id: number;
+  name: string;
+  jobTitle: string;
+  location: string;
+  email: string;
+  profilePicture: {
+    fileContents: string;
+    contentType: string;
+  } | null;
+}
 
 interface Comment {
   appointmentId:number,

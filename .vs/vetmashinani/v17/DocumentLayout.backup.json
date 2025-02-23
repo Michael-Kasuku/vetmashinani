@@ -1,7 +1,28 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vetmashinani\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{649E743E-549B-4CF2-B6D2-77110EE9DB08}|vetmashinani.Server\\vetmashinani.Server.csproj|c:\\users\\michael kasuku\\documents\\computer science\\fourth year\\web development\\project\\vetmashinani\\vetmashinani.server\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{649E743E-549B-4CF2-B6D2-77110EE9DB08}|vetmashinani.Server\\vetmashinani.Server.csproj|solutionrelative:vetmashinani.server\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{068759FD-1053-4FBD-8763-389400260EFC}|vetmashinani.client\\vetmashinani.client.esproj|c:\\users\\michael kasuku\\documents\\computer science\\fourth year\\web development\\project\\vetmashinani\\vetmashinani.client\\src\\app\\farmer-comments\\farmer-comments.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{068759FD-1053-4FBD-8763-389400260EFC}|vetmashinani.client\\vetmashinani.client.esproj|solutionrelative:vetmashinani.client\\src\\app\\farmer-comments\\farmer-comments.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{068759FD-1053-4FBD-8763-389400260EFC}|vetmashinani.client\\vetmashinani.client.esproj|c:\\users\\michael kasuku\\documents\\computer science\\fourth year\\web development\\project\\vetmashinani\\vetmashinani.client\\src\\app\\farmer-comments\\farmer-comments.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{068759FD-1053-4FBD-8763-389400260EFC}|vetmashinani.client\\vetmashinani.client.esproj|solutionrelative:vetmashinani.client\\src\\app\\farmer-comments\\farmer-comments.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{649E743E-549B-4CF2-B6D2-77110EE9DB08}|vetmashinani.Server\\vetmashinani.Server.csproj|c:\\users\\michael kasuku\\documents\\computer science\\fourth year\\web development\\project\\vetmashinani\\vetmashinani.server\\models\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{649E743E-549B-4CF2-B6D2-77110EE9DB08}|vetmashinani.Server\\vetmashinani.Server.csproj|solutionrelative:vetmashinani.server\\models\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{068759FD-1053-4FBD-8763-389400260EFC}|vetmashinani.client\\vetmashinani.client.esproj|c:\\users\\michael kasuku\\documents\\computer science\\fourth year\\web development\\project\\vetmashinani\\vetmashinani.client\\src\\app\\farmer-comments\\farmer-comments.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{068759FD-1053-4FBD-8763-389400260EFC}|vetmashinani.client\\vetmashinani.client.esproj|solutionrelative:vetmashinani.client\\src\\app\\farmer-comments\\farmer-comments.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +30,76 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Comment.cs",
+              "DocumentMoniker": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vetmashinani\\vetmashinani.Server\\Models\\Comment.cs",
+              "RelativeDocumentMoniker": "vetmashinani.Server\\Models\\Comment.cs",
+              "ToolTip": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vetmashinani\\vetmashinani.Server\\Models\\Comment.cs",
+              "RelativeToolTip": "vetmashinani.Server\\Models\\Comment.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-23T13:23:11.389Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "farmer-comments.service.ts",
+              "DocumentMoniker": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vetmashinani\\vetmashinani.client\\src\\app\\farmer-comments\\farmer-comments.service.ts",
+              "RelativeDocumentMoniker": "vetmashinani.client\\src\\app\\farmer-comments\\farmer-comments.service.ts",
+              "ToolTip": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vetmashinani\\vetmashinani.client\\src\\app\\farmer-comments\\farmer-comments.service.ts",
+              "RelativeToolTip": "vetmashinani.client\\src\\app\\farmer-comments\\farmer-comments.service.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-02-23T13:03:00.184Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vetmashinani\\vetmashinani.Server\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "vetmashinani.Server\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vetmashinani\\vetmashinani.Server\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "vetmashinani.Server\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAM8AAAAAAAAAAAAIwOMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-23T12:45:31.406Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "farmer-comments.component.ts",
+              "DocumentMoniker": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vetmashinani\\vetmashinani.client\\src\\app\\farmer-comments\\farmer-comments.component.ts",
+              "RelativeDocumentMoniker": "vetmashinani.client\\src\\app\\farmer-comments\\farmer-comments.component.ts",
+              "ToolTip": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vetmashinani\\vetmashinani.client\\src\\app\\farmer-comments\\farmer-comments.component.ts",
+              "RelativeToolTip": "vetmashinani.client\\src\\app\\farmer-comments\\farmer-comments.component.ts",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAIwFQAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-02-23T11:27:17.32Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "farmer-comments.component.html",
+              "DocumentMoniker": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vetmashinani\\vetmashinani.client\\src\\app\\farmer-comments\\farmer-comments.component.html",
+              "RelativeDocumentMoniker": "vetmashinani.client\\src\\app\\farmer-comments\\farmer-comments.component.html",
+              "ToolTip": "C:\\Users\\Michael Kasuku\\Documents\\Computer Science\\fourth year\\Web Development\\Project\\vetmashinani\\vetmashinani.client\\src\\app\\farmer-comments\\farmer-comments.component.html",
+              "RelativeToolTip": "vetmashinani.client\\src\\app\\farmer-comments\\farmer-comments.component.html",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-02-23T11:25:45.498Z",
+              "EditorCaption": ""
             }
           ]
         }

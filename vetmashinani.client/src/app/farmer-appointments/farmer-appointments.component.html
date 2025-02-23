@@ -1,3 +1,7 @@
+<mat-toolbar color="primary" class="header-toolbar">
+  <button mat-raised-button style="background-color: black; color: white;" (click)="back()">Back</button>
+</mat-toolbar>
+
 <div class="table-container">
   <!-- Top Bar with Button -->
   <div class="table-header">
@@ -5,7 +9,7 @@
       <mat-label>Search</mat-label>
       <input matInput (input)="applyFilter($event)" placeholder="Search appointments">
     </mat-form-field>
-    <button mat-raised-button color="primary" class="new-device-button" (click)="addAppointment()">New</button>
+    <button mat-raised-button color="primary" style="background-color: white; color: black;" class="new-device-button" (click)="addAppointment()">New</button>
   </div>
 
   <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8 custom-table">
@@ -33,9 +37,7 @@
     <ng-container matColumnDef="actions">
       <th mat-header-cell *matHeaderCellDef> Actions </th>
       <td mat-cell *matCellDef="let appointment">
-        <button mat-raised-button class="comment-button" (click)="comment(appointment)">Comment</button>
-        <button mat-raised-button class="approve-button" (click)="approve(appointment)">Approve</button>
-        <button mat-raised-button class="cancel-button" (click)="cancel(appointment)">Cancel</button>
+        <button mat-raised-button style="background-color: white; color: black;" class="comment-button" (click)="comment(appointment)">Comment</button>
       </td>
     </ng-container>
 

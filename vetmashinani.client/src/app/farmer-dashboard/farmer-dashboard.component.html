@@ -1,19 +1,55 @@
 <mat-toolbar color="primary" class="header-toolbar">
-  <span class="title">Vet Mashinani - Farmer Dashboard</span>
-  <!-- Profile Menu -->
+  <span class="title">Farmer</span>
+
   <button mat-icon-button [matMenuTriggerFor]="profileMenu" aria-label="Profile" class="profile-button">
     <img [src]="profileImage" alt="Profile" class="profile-image">
   </button>
-
   <mat-menu #profileMenu="matMenu" class="profile-menu">
     <button mat-menu-item (click)="goToProfile()">My Profile</button>
     <button mat-menu-item (click)="onLogout()">Logout</button>
   </mat-menu>
 </mat-toolbar>
 
-<!-- Horizontal Navigation Menu -->
-<mat-tab-group [(selectedIndex)]="activeTab" class="tab-group">
-  <mat-tab label="Vets">
-    <app-farmer-vet-profiles></app-farmer-vet-profiles>
-  </mat-tab>
-</mat-tab-group>
+<section class="container">
+  <mat-form-field class="search-box" appearance="outline">
+    <mat-label>Search Vet</mat-label>
+    <input matInput (keyup)="applyFilter($event)">
+  </mat-form-field>
+  <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="profile">
+      <mat-header-cell *matHeaderCellDef> Profile </mat-header-cell>
+      <mat-cell *matCellDef="let vet">
+        <img [src]="getProfileImageUrl(vet)" alt="{{ vet.name }}'s profile" class="profile-img">
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+      <mat-cell *matCellDef="let vet"> {{ vet.name }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="jobTitle">
+      <mat-header-cell *matHeaderCellDef> Job Title </mat-header-cell>
+      <mat-cell *matCellDef="let vet"> {{ vet.jobTitle }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="location">
+      <mat-header-cell *matHeaderCellDef> Location </mat-header-cell>
+      <mat-cell *matCellDef="let vet"> {{ vet.location }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+      <mat-cell *matCellDef="let vet">
+        <button mat-raised-button class="btn-book" (click)="appointments(vet)">Appointments</button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+  <div class="paginator-container">
+    <mat-paginator [pageSizeOptions]="[5, 10, 20, 30]" showFirstLastButtons></mat-paginator>
+  </div>
+</section>

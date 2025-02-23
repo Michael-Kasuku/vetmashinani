@@ -88,10 +88,15 @@ export class FarmerAppointmentsComponent {
     this.router.navigate(['/farmer/addappointment']);
   }
 
+  back(): void {
+    // Navigate to the farmer dashboard
+    this.router.navigate(['/farmer/dashboard']);
+  }
+
   comment(appointment: Appointment): void {
     // Store the Appointment in local storage
     localStorage.setItem('appointment', JSON.stringify(appointment));
-    this.router.navigate([`/vet/comments`]);
+    this.router.navigate([`/farmer/comments`]);
   }
 
   approve(appointment: Appointment): void {

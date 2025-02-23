@@ -6,7 +6,6 @@ import { FarmerLoginComponent } from './farmer-login/farmer-login.component';
 import { FarmerSignupComponent } from './farmer-signup/farmer-signup.component';
 import { FarmerForgotPasswordComponent } from './farmer-forgot-password/farmer-forgot-password.component';
 import { FarmerDashboardComponent } from './farmer-dashboard/farmer-dashboard.component';
-import { FarmerVetProfilesComponent } from './farmer-vet-profiles/farmer-vet-profiles.component';
 import { FarmerMyProfileComponent } from './farmer-my-profile/farmer-my-profile.component';
 import { FarmerAppointmentsComponent } from './farmer-appointments/farmer-appointments.component';
 import { FarmerCommentsComponent } from './farmer-comments/farmer-comments.component';
@@ -15,7 +14,6 @@ import { VetLoginComponent } from './vet-login/vet-login.component';
 import { VetSignupComponent } from './vet-signup/vet-signup.component';
 import { VetForgotPasswordComponent } from './vet-forgot-password/vet-forgot-password.component';
 import { VetDashboardComponent } from './vet-dashboard/vet-dashboard.component';
-import { VetFarmerProfilesComponent } from './vet-farmer-profiles/vet-farmer-profiles.component';
 import { VetMyProfileComponent } from './vet-my-profile/vet-my-profile.component';
 import { VetAppointmentsComponent } from './vet-appointments/vet-appointments.component';
 import { VetCommentsComponent } from './vet-comments/vet-comments.component';
@@ -30,7 +28,6 @@ const routes: Routes = [
   { path: 'farmer/signup', component: FarmerSignupComponent },
   { path: 'farmer/forgot', component: FarmerForgotPasswordComponent },
   { path: 'farmer/dashboard', component: FarmerDashboardComponent, canActivate: [FarmerAuthGuard] },
-  { path: 'farmer/vetprofiles', component: FarmerVetProfilesComponent, canActivate: [FarmerAuthGuard] },
   { path: 'farmer/myprofile', component: FarmerMyProfileComponent, canActivate: [FarmerAuthGuard] },
   { path: 'farmer/appointments', component: FarmerAppointmentsComponent, canActivate: [FarmerAuthGuard] },
   { path: 'farmer/comments', component: FarmerCommentsComponent, canActivate: [FarmerAuthGuard] },
@@ -39,7 +36,6 @@ const routes: Routes = [
   { path: 'vet/signup', component: VetSignupComponent },
   { path: 'vet/forgot', component: VetForgotPasswordComponent },
   { path: 'vet/dashboard', component: VetDashboardComponent, canActivate: [VetAuthGuard] },
-  { path: 'vet/farmerprofiles', component: VetFarmerProfilesComponent, canActivate: [VetAuthGuard] },
   { path: 'vet/myprofile', component: VetMyProfileComponent, canActivate: [VetAuthGuard] },
   { path: 'vet/appointments', component: VetAppointmentsComponent, canActivate: [VetAuthGuard] },
   { path: 'vet/comments', component: VetCommentsComponent, canActivate: [VetAuthGuard] },

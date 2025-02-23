@@ -219,3 +219,161 @@ app-vet-farmer-profiles{
     padding: 8px 15px;
   }
 }
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.profile-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #4CAF50;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+  color: #333;
+}
+
+.job-title {
+  font-size: 1rem;
+  color: #777;
+  margin: 5px 0;
+}
+
+.location {
+  font-size: 0.9rem;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.location i {
+  color: #d32f2f;
+}
+
+.profile-actions {
+  margin-top: 1rem;
+}
+
+.btn-book {
+  background: #4CAF50;
+  color: #fff;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.btn-book:hover {
+  background: #388E3C;
+}
+
+/* Mobile-friendly adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .profile-grid {
+    grid-template-columns: 1fr; /* Single column layout on smaller screens */
+    gap: 1rem;
+  }
+
+  .profile-card {
+    padding: 1rem;
+  }
+
+  .profile-img {
+    width: 70px;
+    height: 70px;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+  }
+
+  .job-title {
+    font-size: 0.9rem;
+  }
+
+  .location {
+    font-size: 0.8rem;
+  }
+
+  .btn-book {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0.5rem;
+  }
+
+  .profile-card {
+    padding: 0.8rem;
+  }
+
+  .profile-img {
+    width: 60px;
+    height: 60px;
+  }
+
+  h2 {
+    font-size: 1rem;
+  }
+
+  .job-title {
+    font-size: 0.85rem;
+  }
+
+  .location {
+    font-size: 0.75rem;
+  }
+
+  .btn-book {
+    padding: 5px 10px;
+    font-size: 0.8rem;
+  }
+}
+

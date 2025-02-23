@@ -44,9 +44,7 @@ import { VetLoginComponent } from './vet-login/vet-login.component';
 import { VetSignupComponent } from './vet-signup/vet-signup.component';
 import { VetForgotPasswordComponent } from './vet-forgot-password/vet-forgot-password.component';
 import { VetDashboardComponent } from './vet-dashboard/vet-dashboard.component';
-import { VetFarmerProfilesComponent } from './vet-farmer-profiles/vet-farmer-profiles.component';
 import { VetMyProfileComponent } from './vet-my-profile/vet-my-profile.component';
-import { FarmerVetProfilesComponent } from './farmer-vet-profiles/farmer-vet-profiles.component';
 import { FarmerMyProfileComponent } from './farmer-my-profile/farmer-my-profile.component';
 import { VetAppointmentsComponent } from './vet-appointments/vet-appointments.component';
 import { FarmerAppointmentsComponent } from './farmer-appointments/farmer-appointments.component';
@@ -67,9 +65,7 @@ import { FarmerAddAppointmentComponent } from './farmer-add-appointment/farmer-a
     VetSignupComponent,
     VetForgotPasswordComponent,
     VetDashboardComponent,
-    VetFarmerProfilesComponent,
     VetMyProfileComponent,
-    FarmerVetProfilesComponent,
     FarmerMyProfileComponent,
     VetAppointmentsComponent,
     FarmerAppointmentsComponent,

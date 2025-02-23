@@ -5,6 +5,18 @@ import { VetAuthService } from '../vet-auth/vet-auth.service';
 import { HttpClient } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
+export interface FarmerProfile {
+  id: number;
+  name: string;
+  jobTitle: string;
+  location: string;
+  email: string;
+  profilePicture: {
+    fileContents: string;
+    contentType: string;
+  } | null;
+}
+
 @Component({
   selector: 'app-vet-dashboard',
   standalone: false,
@@ -18,6 +30,9 @@ export class VetDashboardComponent implements OnInit, OnDestroy {
   activeTab: number = 0;  // Default to the first tab
   profileImage: string = '/img/vetmashinani.png';  // Default profile image
   private email: string | null = localStorage.getItem('email');
+  farmerProfiles: FarmerProfile[] = [];
+  filteredProfiles: FarmerProfile[] = [];
+  searchQuery: string = '';
 
   constructor(private authService: VetAuthService,
     private router: Router,
@@ -29,6 +44,7 @@ export class VetDashboardComponent implements OnInit, OnDestroy {
     if (this.email) {
       this.loadProfileImage(this.email);
     }
+    this.fetchFarmers();
   }
 
   ngOnDestroy(): void {
@@ -36,6 +52,30 @@ export class VetDashboardComponent implements OnInit, OnDestroy {
     this.destroySubject.complete();
   }
 
+  fetchFarmers(): void {
+    const url = `https://localhost:40443/api/account/getfarmers`;
+    this.http.get<FarmerProfile[]>(url, { responseType: 'json' }).subscribe({
+      next: (data) => {
+        this.farmerProfiles = data;
+        this.filteredProfiles = data;
+        this.openSnackbar('Farmer Profiles Loaded Successfully!', 'success');
+      },
+      error: () => {
+        this.openSnackbar('Failed to load Farmer Profiles!', 'error');
+      },
+    });
+  }
+
+  getProfileImageUrl(farmer: FarmerProfile): string {
+    return farmer.profilePicture?.fileContents
+      ? `data:${farmer.profilePicture.contentType};base64,${farmer.profilePicture.fileContents}`
+      : '/img/vetmashinani.png';
+  }
+
+  appointments(farmer: FarmerProfile): void {
+    localStorage.setItem('farmer', JSON.stringify(farmer));
+    this.router.navigate(['/vet/appointments']);
+  }
   onLogout(): void {
     this.authService.logout();
     this.router.navigate(["/vet/login"]);

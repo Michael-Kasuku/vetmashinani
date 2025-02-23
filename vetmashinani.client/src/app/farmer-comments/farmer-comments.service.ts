@@ -6,11 +6,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class FarmerCommentService {
-  private apiUrl = `https://localhost:40443/api/farmer/getcomments`; // Replace with your API endpoint
+  private apiUrl = `https://localhost:40443/api/account/getcomments`; // Replace with your API endpoint
 
   constructor(private http: HttpClient) { }
 
-  getComments(appointmentId: number, senderEmail: string, receiverEmail: string): Observable<any> {
+  getComments(appointmentId: string, senderEmail: string, receiverEmail: string): Observable<any> {
     return this.http.get(`${this.apiUrl}?appointmentId=${appointmentId}&senderEmail=${senderEmail}&receiverEmail=${receiverEmail}`);
   }
 }

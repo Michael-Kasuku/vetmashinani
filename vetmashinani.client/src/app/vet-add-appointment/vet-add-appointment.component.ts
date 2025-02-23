@@ -2,8 +2,18 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { FarmerProfile } from '../vet-farmer-profiles/vet-farmer-profiles.component';
 
+export interface FarmerProfile {
+  id: number;
+  name: string;
+  jobTitle: string;
+  location: string;
+  email: string;
+  profilePicture: {
+    fileContents: string;
+    contentType: string;
+  } | null;
+}
 @Component({
   selector: 'app-vet-add-appointment',
   standalone: false,

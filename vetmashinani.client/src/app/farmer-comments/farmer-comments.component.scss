@@ -69,15 +69,16 @@
 
     .user-message {
       align-self: flex-end;
-      background-color: #007bff;
-      color: white;
+      background-color: white;
+      color: black;
       border-radius: 20px 20px 0 20px;
+      border: 1px solid #ddd;
     }
 
     .vet-message {
       align-self: flex-start;
-      background-color: #e9ecef;
-      color: #212529;
+      background-color: #007bff;
+      color: white;
       border-radius: 20px 20px 20px 0;
     }
   }
