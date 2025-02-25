@@ -14,14 +14,15 @@ export interface Appointment {
   status: string;
   dateAdded: string;
 }
+
 @Component({
   selector: 'app-vet-appointments',
   standalone: false,
-  
+
   templateUrl: './vet-appointments.component.html',
   styleUrl: './vet-appointments.component.scss'
 })
-export class VetAppointmentsComponent implements OnInit, AfterViewInit {
+export class VetAppointmentsComponent {
   private email: string | null = localStorage.getItem('email');
   displayedColumns: string[] = ['description', 'dateAdded', 'status', 'actions'];
   dataSource = new MatTableDataSource<Appointment>([]);
@@ -85,6 +86,11 @@ export class VetAppointmentsComponent implements OnInit, AfterViewInit {
   addAppointment(): void {
     // Navigate to the add appointment page
     this.router.navigate(['/vet/addappointment']);
+  }
+
+  back(): void {
+    // Navigate to the vet dashboard
+    this.router.navigate(['/vet/dashboard']);
   }
 
   comment(appointment: Appointment): void {

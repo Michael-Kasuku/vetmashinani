@@ -1,238 +1,99 @@
-/* Header Styles */
+$primary-color: #1976d2;
+$secondary-color: #3f51b5;
+$darker-primary: #1565c0;
+$darker-secondary: #303f9f;
+$gradient: linear-gradient(135deg, $secondary-color, $primary-color);
+$darker-gradient: linear-gradient(135deg, $darker-secondary, $darker-primary);
+
 .header-toolbar {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  padding: 20px 30px;
-  background: linear-gradient(135deg, #3f51b5, #1976d2); /* Gradient Background */
+  padding: 15px 20px;
+  text-align: center;
+  background: $gradient;
   color: white;
-  border-bottom: 2px solid #1976d2;
+  border-bottom: 2px solid $primary-color;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: background 0.3s ease;
-}
 
-.header-toolbar:hover {
-  background: linear-gradient(135deg, #303f9f, #1565c0); /* Darker gradient on hover */
+  &:hover {
+    background: $darker-gradient;
+  }
 }
 
 .title {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
   color: #fff;
   transition: transform 0.2s ease;
+  margin-bottom: 15px;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 }
 
-.title:hover {
-  transform: scale(1.05);
-}
-
-/* Profile Button Styles */
 .profile-button {
   background-color: transparent;
   border: none;
   padding: 0;
-  margin: 0;
+  margin: 10px 0 0 0;
   transition: transform 0.3s ease;
-}
+  position: absolute;
+  top: 15px;
+  right: 15px;
 
-.profile-button:hover {
-  transform: scale(1.1);
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
 .profile-image {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   object-fit: cover;
   transition: transform 0.3s ease;
+
+  &:hover {
+    transform: rotate(10deg);
+  }
 }
 
-.profile-image:hover {
-  transform: rotate(10deg);
-}
-
-/* Mat Menu Styles */
 .profile-menu {
-  background-color: rgba(255, 255, 255, 0.95); /* Slight Transparency */
+  background-color: rgba(255, 255, 255, 0.95);
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .mat-menu-item {
-  font-size: 1.1rem;
-  padding: 12px 25px;
-  color: #1976d2;
+  font-size: 1rem;
+  padding: 10px 20px;
+  color: $primary-color;
   transition: background-color 0.3s ease, transform 0.2s ease;
-}
 
-.mat-menu-item:hover {
-  background-color: #e3f2fd;
-  transform: translateX(5px); /* Subtle hover effect */
-}
-
-/* Tab Group Styles */
-.mat-tab-group {
-  margin-top: 30px;
-  padding: 15px;
-  background-color: #fafafa;
-  border-radius: 8px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-}
-
-mat-tab {
-  font-size: 1.2rem;
-  font-weight: 500;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-mat-tab:hover {
-  transform: scale(1.05);
-}
-
-mat-tab-group .mat-tab-label-active {
-  font-weight: 700;
-  color: #3f51b5;
-  border-bottom: 3px solid #3f51b5; /* Custom tab indicator */
-  padding-bottom: 12px;
-  transition: all 0.3s ease;
-}
-
-mat-tab-group .mat-tab-label {
-  padding-bottom: 10px;
-  font-size: 1.1rem;
-  color: #757575;
-  transition: color 0.3s ease;
-}
-
-mat-tab-group .mat-tab-label:hover {
-  color: #3f51b5;
-}
-
-/* Content Area Styling */
-app-vet-farmer-profiles{
-  padding: 20px;
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-  margin-top: 20px;
-}
-
-/* Responsive Design for Mobile-Friendly Layouts */
-@media (max-width: 768px) {
-  .header-toolbar {
-    flex-direction: column;
-    align-items: center;
-    padding: 15px 20px;
-    text-align: center;
-  }
-
-  .title {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-  }
-
-  /* Position profile menu on the top-right in small screens */
-  .profile-button {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-  }
-
-  /* Profile Image & Button */
-  .profile-button {
-    margin-top: 10px;
-  }
-
-  .profile-image {
-    width: 40px;
-    height: 40px;
-  }
-
-  /* Tab Styles */
-  .mat-tab-group {
-    margin-top: 20px;
-    padding: 10px;
-  }
-
-  mat-tab {
-    font-size: 1rem;
-  }
-
-  mat-tab-group .mat-tab-label-active {
-    font-weight: 600;
-    font-size: 1.1rem;
-  }
-
-  /* Content Area */
-  app-vet-farmer-profiles {
-    padding: 15px;
-    margin-top: 10px;
-  }
-
-  /* Ensure tabs stack vertically on mobile */
-  mat-tab-group .mat-tab-label {
-    font-size: 1rem;
-    padding: 8px;
-  }
-
-  /* Make the menu and toolbar buttons more touch-friendly */
-  .mat-menu-item {
-    font-size: 1rem;
-    padding: 10px 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .title {
-    font-size: 1.3rem;
-  }
-
-  /* Make profile image smaller for very small screens */
-  .profile-image {
-    width: 35px;
-    height: 35px;
-  }
-
-  .profile-button {
-    padding: 5px;
-  }
-
-  mat-tab-group {
-    margin-top: 15px;
-    padding: 8px;
-  }
-
-  mat-tab {
-    font-size: 0.95rem;
-  }
-
-  app-vet-farmer-profiles {
-    padding: 12px;
-    margin-top: 8px;
-  }
-
-  /* Ensure buttons and menus are more accessible */
-  .mat-menu-item {
-    font-size: 0.95rem;
-    padding: 8px 15px;
+  &:hover {
+    background-color: #e3f2fd;
+    transform: translateX(5px);
   }
 }
 
 .container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  padding: 2rem;
+  padding: 1rem;
+  width: 100%;
 }
 
 .profile-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: 1fr;
+  gap: 1rem;
   width: 100%;
-  max-width: 1200px;
 }
 
 .profile-card {
@@ -241,24 +102,18 @@ app-vet-farmer-profiles{
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   text-align: center;
-  padding: 1.5rem;
+  padding: 1rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
 
-.profile-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-.profile-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
 }
 
 .profile-img {
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid #4CAF50;
@@ -266,114 +121,114 @@ app-vet-farmer-profiles{
 }
 
 h2 {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 600;
   margin: 0;
   color: #333;
 }
 
 .job-title {
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: #777;
   margin: 5px 0;
 }
 
 .location {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: #555;
   display: flex;
   align-items: center;
   gap: 5px;
-}
 
-.location i {
-  color: #d32f2f;
-}
-
-.profile-actions {
-  margin-top: 1rem;
+  i {
+    color: #d32f2f;
+  }
 }
 
 .btn-book {
   background: #4CAF50;
   color: #fff;
-  padding: 8px 16px;
-  font-size: 0.9rem;
+  padding: 6px 12px;
+  font-size: 0.85rem;
   border-radius: 8px;
   transition: background 0.3s ease;
+
+  &:hover {
+    background: #388E3C;
+  }
 }
 
-.btn-book:hover {
-  background: #388E3C;
+.paginator-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-top: 1rem;
 }
 
-/* Mobile-friendly adjustments */
-@media (max-width: 768px) {
-  .container {
-    padding: 1rem;
+.search-container {
+  position: relative;
+  flex-grow: 1;
+  max-width: 100%;
+  margin-right: 0;
+}
+
+.search-box {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+@media (min-width: 768px) {
+  .header-toolbar {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 30px;
+  }
+
+  .title {
+    font-size: 1.8rem;
+    margin-bottom: 0;
+  }
+
+  .profile-button {
+    margin: 0;
+    position: static;
+  }
+
+  .profile-image {
+    width: 50px;
+    height: 50px;
+  }
+
+  .mat-menu-item {
+    font-size: 1.1rem;
+    padding: 12px 25px;
   }
 
   .profile-grid {
-    grid-template-columns: 1fr; /* Single column layout on smaller screens */
-    gap: 1rem;
-  }
-
-  .profile-card {
-    padding: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
 
   .profile-img {
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
   }
 
   h2 {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
   .job-title {
-    font-size: 0.9rem;
-  }
-
-  .location {
-    font-size: 0.8rem;
-  }
-
-  .btn-book {
-    padding: 6px 12px;
-    font-size: 0.85rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .container {
-    padding: 0.5rem;
-  }
-
-  .profile-card {
-    padding: 0.8rem;
-  }
-
-  .profile-img {
-    width: 60px;
-    height: 60px;
-  }
-
-  h2 {
     font-size: 1rem;
   }
 
-  .job-title {
-    font-size: 0.85rem;
-  }
-
   .location {
-    font-size: 0.75rem;
+    font-size: 0.9rem;
   }
 
   .btn-book {
-    padding: 5px 10px;
-    font-size: 0.8rem;
+    padding: 8px 16px;
+    font-size: 0.9rem;
   }
 }
-

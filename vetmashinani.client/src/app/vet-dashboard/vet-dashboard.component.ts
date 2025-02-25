@@ -1,9 +1,11 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { VetAuthService } from '../vet-auth/vet-auth.service';
 import { HttpClient } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
 
 export interface FarmerProfile {
   id: number;
@@ -19,20 +21,20 @@ export interface FarmerProfile {
 
 @Component({
   selector: 'app-vet-dashboard',
-  standalone: false,
-  
+  standalone:false,
   templateUrl: './vet-dashboard.component.html',
   styleUrl: './vet-dashboard.component.scss'
 })
-export class VetDashboardComponent implements OnInit, OnDestroy {
+export class VetDashboardComponent implements OnInit, OnDestroy, AfterViewInit {
   private destroySubject = new Subject();
   isLoggedIn: boolean = false;
-  activeTab: number = 0;  // Default to the first tab
   profileImage: string = '/img/vetmashinani.png';  // Default profile image
   private email: string | null = localStorage.getItem('email');
   farmerProfiles: FarmerProfile[] = [];
-  filteredProfiles: FarmerProfile[] = [];
-  searchQuery: string = '';
+  displayedColumns: string[] = ['profile', 'name', 'jobTitle', 'location', 'actions'];
+  dataSource = new MatTableDataSource<FarmerProfile>();
+
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor(private authService: VetAuthService,
     private router: Router,
@@ -47,17 +49,21 @@ export class VetDashboardComponent implements OnInit, OnDestroy {
     this.fetchFarmers();
   }
 
+  ngAfterViewInit(): void {
+    this.dataSource.paginator = this.paginator;
+  }
+
   ngOnDestroy(): void {
     this.destroySubject.next(true);
     this.destroySubject.complete();
   }
 
   fetchFarmers(): void {
-    const url = `https://localhost:40443/api/account/getfarmers`;
+    const url = 'https://localhost:40443/api/account/getfarmers';
     this.http.get<FarmerProfile[]>(url, { responseType: 'json' }).subscribe({
       next: (data) => {
-        this.farmerProfiles = data;
-        this.filteredProfiles = data;
+        this.dataSource.data = data;
+        this.dataSource.paginator = this.paginator;
         this.openSnackbar('Farmer Profiles Loaded Successfully!', 'success');
       },
       error: () => {
@@ -76,6 +82,7 @@ export class VetDashboardComponent implements OnInit, OnDestroy {
     localStorage.setItem('farmer', JSON.stringify(farmer));
     this.router.navigate(['/vet/appointments']);
   }
+
   onLogout(): void {
     this.authService.logout();
     this.router.navigate(["/vet/login"]);
@@ -96,25 +103,17 @@ export class VetDashboardComponent implements OnInit, OnDestroy {
         reader.readAsDataURL(response);
         this.openSnackbar('Profile Picture Loaded Successfully!', 'success');
       },
-      (error) => {
-        let errorMessage = 'Error loading profile image.';
-        if (error.error instanceof Blob && error.error.type === 'application/json') {
-          const reader = new FileReader();
-          reader.onload = () => {
-            const errorData = JSON.parse(reader.result as string);
-            errorMessage = errorData.message || errorMessage; // Ensure errorData.message exists
-            this.openSnackbar(errorMessage, 'error');
-          };
-          reader.readAsText(error.error);
-        } else {
-          this.openSnackbar(errorMessage, 'error');
-        }
-        this.profileImage = '/img/vmashinani.png'; // Fallback to default image
+      () => {
+        this.openSnackbar('Error loading profile image.', 'error');
+        this.profileImage = '/img/vetmashinani.png'; // Fallback to default image
       }
     );
   }
 
-
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
 
   openSnackbar(message: string, severity: 'success' | 'error') {
     const snackBarClass = severity === 'success' ? 'snackbar-success' : 'snackbar-error';
@@ -122,9 +121,5 @@ export class VetDashboardComponent implements OnInit, OnDestroy {
       duration: 3000,
       panelClass: snackBarClass,
     });
-  }
-
-  closeSnackbar() {
-    this.snackBar.dismiss();
   }
 }

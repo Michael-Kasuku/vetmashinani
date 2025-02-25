@@ -1,10 +1,9 @@
 <mat-toolbar color="primary" class="header-toolbar">
-  <span class="title">Vet Dashboard</span>
-  <!-- Profile Menu -->
+  <span class="title">Vet</span>
+
   <button mat-icon-button [matMenuTriggerFor]="profileMenu" aria-label="Profile" class="profile-button">
     <img [src]="profileImage" alt="Profile" class="profile-image">
   </button>
-
   <mat-menu #profileMenu="matMenu" class="profile-menu">
     <button mat-menu-item (click)="goToProfile()">My Profile</button>
     <button mat-menu-item (click)="onLogout()">Logout</button>
@@ -12,19 +11,45 @@
 </mat-toolbar>
 
 <section class="container">
-  <div class="profile-grid">
-    <div class="profile-card" *ngFor="let farmer of filteredProfiles">
-      <!-- Profile Header -->
-      <div class="profile-header">
+  <mat-form-field class="search-box" appearance="outline">
+    <mat-label>Search Farmer</mat-label>
+    <input matInput (keyup)="applyFilter($event)">
+  </mat-form-field>
+  <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="profile">
+      <mat-header-cell *matHeaderCellDef> Profile </mat-header-cell>
+      <mat-cell *matCellDef="let farmer">
         <img [src]="getProfileImageUrl(farmer)" alt="{{ farmer.name }}'s profile" class="profile-img">
-        <h2>{{ farmer.name }}</h2>
-        <p class="job-title">{{ farmer.jobTitle }}</p>
-        <p class="location"><i class="fas fa-map-marker-alt"></i> {{ farmer.location }}</p>
-        <div class="profile-actions">
-          <button mat-raised-button class="btn-book" (click)="appointments(farmer)">Appointments</button>
-        </div>
-      </div>
-    </div>
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+      <mat-cell *matCellDef="let farmer"> {{ farmer.name }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="jobTitle">
+      <mat-header-cell *matHeaderCellDef> Job Title </mat-header-cell>
+      <mat-cell *matCellDef="let farmer"> {{ farmer.jobTitle }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="location">
+      <mat-header-cell *matHeaderCellDef> Location </mat-header-cell>
+      <mat-cell *matCellDef="let farmer"> {{ farmer.location }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+      <mat-cell *matCellDef="let farmer">
+        <button mat-raised-button class="btn-book" (click)="appointments(farmer)">Appointments</button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+  <div class="paginator-container">
+    <mat-paginator [pageSizeOptions]="[5, 10, 20, 30]" showFirstLastButtons></mat-paginator>
   </div>
 </section>
-

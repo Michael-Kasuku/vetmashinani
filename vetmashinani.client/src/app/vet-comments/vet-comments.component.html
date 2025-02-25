@@ -1,4 +1,7 @@
 <div class="container py-4 chat-container">
+  <mat-toolbar color="primary" class="header-toolbar">
+    <button mat-raised-button style="background-color: black; color: white;" (click)="back()">Back</button>
+  </mat-toolbar>
   <div class="chat-header d-flex justify-content-between align-items-center mb-3">
     <div class="vet-info d-flex align-items-center">
       <h5 class="ms-3">{{ selectedAppointment.description }}</h5>
@@ -12,7 +15,7 @@
            [ngClass]="{'user-message': comment.sender === currentUserEmail, 'vet-message': comment.sender !== currentUserEmail}">
         <div class="message-content">
           <p>{{ comment.content }}</p>
-          <small>{{ comment.timestamp | date: 'shortTime' }}</small>
+          <small>{{ comment.sentAt | date: 'shortTime' }}</small>
         </div>
       </div>
     </div>
@@ -22,9 +25,9 @@
   <div class="chat-footer mt-3">
     <form (ngSubmit)="sendComment($event)">
       <div class="input-group">
-        <input type="text" class="form-control" [(ngModel)]="formData.newComment" placeholder="Type your comment...">
+        <input type="text" class="form-control" [(ngModel)]="formData.newComment" name="commentInput" placeholder="Type your comment..." required>
         <button mat-raised-button color="primary" type="submit">Send</button>
       </div>
-      </form>
+    </form>
   </div>
 </div>
