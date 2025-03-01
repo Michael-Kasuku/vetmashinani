@@ -37,7 +37,7 @@ export class VetAppointmentsComponent {
   }
 
   fetchAppointments(): void {
-    const url = `https://localhost:40443/api/account/getappointments?Email=${this.email}`;
+    const url = `https://vetmashinani-001-site1.qtempurl.com/api/account/getappointments?Email=${this.email}`;
     this.http.get<Appointment[]>(url).subscribe({
       next: (data) => {
         this.dataSource.data = data.map(appointment => ({
@@ -101,7 +101,7 @@ export class VetAppointmentsComponent {
 
   approve(appointment: Appointment): void {
     if (confirm(`Are you sure you want to approve ${appointment.description}?`)) {
-      const url = `https://localhost:40443/api/account/approveappointment`;
+      const url = `https://vetmashinani-001-site1.qtempurl.com/api/account/approveappointment`;
 
       this.http.put(url, {
         Id: appointment.id,
@@ -124,7 +124,7 @@ export class VetAppointmentsComponent {
 
   cancel(appointment: Appointment): void {
     if (confirm(`Are you sure you want to cancel ${appointment.description}?`)) {
-      const url = `https://localhost:40443/api/account/cancelappointment`;
+      const url = `https://vetmashinani-001-site1.qtempurl.com/api/account/cancelappointment`;
 
       this.http.put(url, {
         Id: appointment.id,

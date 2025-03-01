@@ -122,7 +122,7 @@ export class FarmerCommentsComponent implements OnInit {
       return;
     }
 
-    const url = `https://localhost:40443/api/account/addcomment`;
+    const url = `https://vetmashinani-001-site1.qtempurl.com/api/account/addcomment`;
     this.http.post(url, {
       AppointmentId: String(this.selectedAppointment.id),
       Sender: this.currentUserEmail,

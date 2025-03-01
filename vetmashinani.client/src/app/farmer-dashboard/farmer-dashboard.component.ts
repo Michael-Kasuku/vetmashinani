@@ -59,7 +59,7 @@ export class FarmerDashboardComponent implements OnInit, OnDestroy, AfterViewIni
   }
 
   fetchVets(): void {
-    const url = 'https://localhost:40443/api/account/getvets';
+    const url = 'https://vetmashinani-001-site1.qtempurl.com/api/account/getvets';
     this.http.get<VetProfile[]>(url, { responseType: 'json' }).subscribe({
       next: (data) => {
         this.dataSource.data = data;
@@ -93,7 +93,7 @@ export class FarmerDashboardComponent implements OnInit, OnDestroy, AfterViewIni
   }
 
   private loadProfileImage(email: string): void {
-    const url = `https://localhost:40443/api/account/getprofileimage?Email=${email}`;
+    const url = `https://vetmashinani-001-site1.qtempurl.com/api/account/getprofileimage?Email=${email}`;
     this.http.get(url, { responseType: 'blob' }).subscribe(
       (response) => {
         const reader = new FileReader();

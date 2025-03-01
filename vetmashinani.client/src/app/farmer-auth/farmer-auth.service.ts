@@ -39,7 +39,7 @@ export class FarmerAuthService {
   }
 
   login(item: LoginRequest): Observable<LoginResult> {
-    const url = `https://localhost:40443/api/farmer/login`;
+    const url = `https://vetmashinani-001-site1.qtempurl.com/api/farmer/login`;
     return this.http.post<LoginResult>(url, item).pipe(
       tap((loginResult) => {
         if (loginResult.success && loginResult.token) {

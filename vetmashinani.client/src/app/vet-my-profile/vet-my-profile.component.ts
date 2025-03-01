@@ -63,7 +63,7 @@ export class VetMyProfileComponent {
     if (this.profileForm.valid) {
       this.isUpdating = true; // Show progress bar
 
-      const url = `https://localhost:40443/api/account/updateprofile`;
+      const url = `https://vetmashinani-001-site1.qtempurl.com/api/account/updateprofile`;
       const formData = new FormData();
 
       formData.append('Email', localStorage.getItem('email') || '');

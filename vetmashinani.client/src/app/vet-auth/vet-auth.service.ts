@@ -39,7 +39,7 @@ export class VetAuthService {
   }
 
   login(item: LoginRequest): Observable<LoginResult> {
-    const url = `https://localhost:40443/api/vet/login`;
+    const url = `https://vetmashinani-001-site1.qtempurl.com/api/vet/login`;
     return this.http.post<LoginResult>(url, item).pipe(
       tap((loginResult) => {
         if (loginResult.success && loginResult.token) {

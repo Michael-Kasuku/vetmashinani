@@ -58,7 +58,7 @@ export class FarmerSignupComponent {
       this.openSnackbar('Passwords do not match.', 'error');
       return;
     }
-    const url = `https://localhost:40443/api/farmer/createfarmer`
+    const url = `https://vetmashinani-001-site1.qtempurl.com/api/farmer/createfarmer`
     // HTTP Request
     this.http.post(url,
       {

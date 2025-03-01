@@ -57,7 +57,7 @@ export class FarmerAddAppointmentComponent implements OnInit, OnDestroy {
     // Show progress bar
     this.loading = true;
 
-    const url = `https://localhost:40443/api/account/addappointment`;
+    const url = `https://vetmashinani-001-site1.qtempurl.com/api/account/addappointment`;
     this.http
       .post(url, {
         Description: this.formData.Description,

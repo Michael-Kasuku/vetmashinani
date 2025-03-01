@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class VetCommentService {
-  private apiUrl = `https://localhost:40443/api/account/getcomments`; // Replace with your API endpoint
+  private apiUrl = `https://vetmashinani-001-site1.qtempurl.com/api/account/getcomments`; // Replace with your API endpoint
 
   constructor(private http: HttpClient) { }
 
